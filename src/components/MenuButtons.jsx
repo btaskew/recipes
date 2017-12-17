@@ -1,13 +1,14 @@
 import React from 'react';
 
-import {ListGroup, ListGroupItem} from 'react-bootstrap';
+import {ListGroup} from 'react-bootstrap';
+import OptionLink from 'components/OptionLink';
 
 function MenuButtons() {
     return (
         <ListGroup>
-            <ListGroupItem>Search by recipe</ListGroupItem>
-            <ListGroupItem>View all</ListGroupItem>
-            <ListGroupItem>Add recipe</ListGroupItem>
+            <OptionLink link="/search" text="Search by recipe" />
+            <OptionLink link="/all" text="View all" />
+            <OptionLink link="/add" text="Add recipe" />
         </ListGroup>
     );
 }
