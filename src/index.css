@@ -1,5 +1,10 @@
 body {
   margin: 0;
-  padding: 0;
+  padding: 20px;
   font-family: sans-serif;
+}
+
+.heading {
+    background-color: #337ab7;
+    color: white;
 }
