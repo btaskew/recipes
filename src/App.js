@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import MainMenu from 'components/MainMenu';
+import Routes from 'components/Routes';
 
 class App extends Component {
     render() {
-        return <MainMenu />;
+        return <Routes />;
     }
 }
 
