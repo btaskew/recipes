@@ -6,7 +6,7 @@ class Ingredient extends Database {
         return this.ingredients.find({name});
     }
 
-    recipes(ingredients) {
+    relatedRecipes(ingredients) {
         const recipes = [];
 
         for (const i in ingredients) {

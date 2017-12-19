@@ -13,7 +13,7 @@ class Recipe extends Database {
             return [];
         }
 
-        return Ingredient.recipes(ingredients);
+        return Ingredient.relatedRecipes(ingredients);
     }
 }
 
