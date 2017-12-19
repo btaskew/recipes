@@ -1,17 +1,13 @@
 import React from 'react';
-import {Modal} from 'react-bootstrap';
 
-import Heading from 'components/Heading';
+import Page from 'components/Page';
 import MenuButtons from 'components/MenuButtons';
 
 function MainMenu() {
     return (
-        <Modal show={true}>
-            <Heading text="Main Menu" />
-            <Modal.Body>
-                <MenuButtons />
-            </Modal.Body>
-        </Modal>
+        <Page heading="Main Menu">
+            <MenuButtons />
+        </Page>
     );
 }
 
