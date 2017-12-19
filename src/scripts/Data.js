@@ -9,17 +9,17 @@ class Data {
 
     getIngredients() {
         return [
-            {id: 1, recipeId: 1, ingredient: 'Bacon'},
-            {id: 1, recipeId: 1, ingredient: 'Cream cheese'},
-            {id: 1, recipeId: 1, ingredient: 'Egg'},
-            {id: 1, recipeId: 2, ingredient: 'Chicken'},
-            {id: 1, recipeId: 2, ingredient: 'Prawns'},
-            {id: 1, recipeId: 2, ingredient: 'Tukey'},
-            {id: 1, recipeId: 2, ingredient: 'Noodles'},
-            {id: 1, recipeId: 3, ingredient: 'Bacon'},
-            {id: 1, recipeId: 3, ingredient: 'Tomato'},
-            {id: 1, recipeId: 3, ingredient: 'Peppers'},
-            {id: 1, recipeId: 7, ingredient: 'foobar'}
+            {id: 1, recipeId: 1, name: 'Bacon'},
+            {id: 1, recipeId: 1, name: 'Cream cheese'},
+            {id: 1, recipeId: 1, name: 'Egg'},
+            {id: 1, recipeId: 2, name: 'Chicken'},
+            {id: 1, recipeId: 2, name: 'Prawns'},
+            {id: 1, recipeId: 2, name: 'Tukey'},
+            {id: 1, recipeId: 2, name: 'Noodles'},
+            {id: 1, recipeId: 3, name: 'Bacon'},
+            {id: 1, recipeId: 3, name: 'Tomato'},
+            {id: 1, recipeId: 3, name: 'Peppers'},
+            {id: 1, recipeId: 7, name: 'foobar'}
         ];
     }
 }
