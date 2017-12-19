@@ -1,4 +1,5 @@
 import loki from 'lokijs';
+import Data from 'scripts/Data';
 
 class Database {
     constructor() {
@@ -6,13 +7,13 @@ class Database {
     }
 
     setup() {
-        this.setupRecipes();
-        this.setupIngredients();
+        this.setRecipes();
+        this.setIngredients();
 
-        console.log(this.getByIngredient('Bacon'));
+        console.log(this.findByIngredient('Bacon'));
     }
 
-    getByIngredient(ingredient) {
+    findByIngredient(ingredient) {
         const ingredients = this.ingredients.find({ingredient: ingredient});
 
         if (!ingredients || ingredients.length < 1) {
@@ -36,30 +37,14 @@ class Database {
         return recipes;
     }
 
-    setupRecipes() {
+    setRecipes() {
         this.recipes = this.database.addCollection('recipes');
-        this.recipes.insert([
-            {id: 1, recipe: 'Spaghetti carbonara'},
-            {id: 2, recipe: 'Stir fry'},
-            {id: 3, recipe: 'Bacon & tomato rice'}
-        ]);
+        this.recipes.insert(Data.getRecipes());
     }
 
-    setupIngredients() {
+    setIngredients() {
         this.ingredients = this.database.addCollection('ingredients');
-        this.ingredients.insert([
-            {id: 1, recipeId: 1, ingredient: 'Bacon'},
-            {id: 1, recipeId: 1, ingredient: 'Cream cheese'},
-            {id: 1, recipeId: 1, ingredient: 'Egg'},
-            {id: 1, recipeId: 2, ingredient: 'Chicken'},
-            {id: 1, recipeId: 2, ingredient: 'Prawns'},
-            {id: 1, recipeId: 2, ingredient: 'Tukey'},
-            {id: 1, recipeId: 2, ingredient: 'Noodles'},
-            {id: 1, recipeId: 3, ingredient: 'Bacon'},
-            {id: 1, recipeId: 3, ingredient: 'Tomato'},
-            {id: 1, recipeId: 3, ingredient: 'Peppers'},
-            {id: 1, recipeId: 7, ingredient: 'foobar'}
-        ]);
+        this.ingredients.insert(Data.getIngredients());
     }
 }
 
