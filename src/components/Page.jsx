@@ -5,12 +5,12 @@ import Heading from 'components/Heading';
 
 function Page(props) {
     return (
-        <Modal show={true}>
+        <React.Fragment>
             <Heading text={props.heading} />
             <Modal.Body>
                 {props.children}
             </Modal.Body>
-        </Modal>
+        </React.Fragment>
     );
 }
 
