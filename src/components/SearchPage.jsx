@@ -1,13 +1,21 @@
-import React from 'react';
+import React, {Component} from 'react';
 
 import Page from 'components/Page';
+import SearchForm from 'components/SearchForm';
 
-function SearchPage () {
-    return (
-        <Page heading="Search by ingredient">
+class SearchPage extends Component {
 
-        </Page>
-    );
+    handleSubmit(ingredient) {
+        
+    }
+
+    render() {
+        return (
+            <Page heading="Search by ingredient">
+                <SearchForm submitForm={this.handleSubmit} />
+            </Page>
+        );
+    }
 }
 
 export default SearchPage;
