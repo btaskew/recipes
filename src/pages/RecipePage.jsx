@@ -19,7 +19,7 @@ class RecipePage extends Component {
 
     render() {
         return (
-            <Page heading={this.props.match.params.name}>
+            <Page heading={this.props.match.params.name} homeIcon>
                 {this.state.ingredients && (
                     <IngredientsList ingredients={this.state.ingredients} />
                 )}

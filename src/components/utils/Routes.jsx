@@ -4,6 +4,7 @@ import {BrowserRouter, Route} from 'react-router-dom';
 import MainMenu from 'pages/MainMenu';
 import SearchPage from 'pages/SearchPage';
 import RecipePage from 'pages/RecipePage';
+import IngredientPage from 'pages/IngredientPage';
 
 function Routes() {
     return (
@@ -12,6 +13,7 @@ function Routes() {
                 <Route path="/" exact component={MainMenu} />
                 <Route path="/search" component={SearchPage} />
                 <Route path="/recipe/:id/:name" component={RecipePage} />
+                <Route path="/ingredient/:id/:name" component={IngredientPage} />
             </div>
         </BrowserRouter>
     );

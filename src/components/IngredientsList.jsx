@@ -7,7 +7,11 @@ class IngredientsList extends PureComponent {
         return (
             <div className="flex">
                 {this.props.ingredients.map(ingredient => (
-                    <Ingredient key={ingredient.id} name={ingredient.name} />
+                    <Ingredient
+                        key={ingredient.id}
+                        id={ingredient.id}
+                        name={ingredient.name}
+                    />
                 ))}
             </div>
         );

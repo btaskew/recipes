@@ -3,30 +3,31 @@ import React, {Component} from 'react';
 import Recipe from 'scripts/Recipe';
 
 import Page from 'components/utils/Page';
-import SearchForm from 'components/SearchForm';
 import RecipesList from 'components/RecipesList';
 
-class SearchPage extends Component {
+class IngredientPage extends Component {
     constructor(props) {
         super(props);
         this.state = {recipes: null};
     }
 
-    handleSubmit = ingredient => {
-        const recipes = Recipe.findByIngredient(ingredient);
+    componentDidMount() {
+        const recipes = Recipe.findByIngredient(this.props.match.params.name);
         this.setState({recipes});
-    };
+    }
 
     render() {
         return (
-            <Page heading="Search by ingredient" homeIcon>
-                <SearchForm submitForm={this.handleSubmit} />
+            <Page
+                heading={`Recipes using "${this.props.match.params.name}"`}
+                homeIcon
+            >
                 {this.state.recipes && (
-                    <RecipesList styleName="searchResults" recipes={this.state.recipes} />
+                    <RecipesList recipes={this.state.recipes} />
                 )}
             </Page>
         );
     }
 }
 
-export default SearchPage;
+export default IngredientPage;
