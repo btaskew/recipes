@@ -1,7 +1,7 @@
 body {
-  margin: 0;
-  padding: 20px;
-  font-family: sans-serif;
+    margin: 0;
+    padding: 20px;
+    font-family: sans-serif;
 }
 
 .heading {
@@ -9,8 +9,17 @@ body {
     color: white;
 }
 
+.glyphicon {
+    color: white;
+    cursor: pointer;
+}
+
 .flex {
     display: flex;
+}
+
+.float-right {
+    float: right;
 }
 
 .searchResults {

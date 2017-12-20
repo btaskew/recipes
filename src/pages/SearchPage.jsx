@@ -19,7 +19,7 @@ class SearchPage extends Component {
 
     render() {
         return (
-            <Page heading="Search by ingredient">
+            <Page heading="Search by ingredient" homeIcon>
                 <SearchForm submitForm={this.handleSubmit} />
                 {this.state.recipes && (
                     <SearchResults recipes={this.state.recipes} />
