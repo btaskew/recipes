@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {Modal} from 'react-bootstrap';
-import Routes from 'components/Routes';
+import Routes from 'components/utils/Routes';
 
 function App() {
     return (

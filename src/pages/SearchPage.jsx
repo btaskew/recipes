@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 
-import Page from 'components/Page';
+import Page from 'components/utils/Page';
 import SearchForm from 'components/SearchForm';
 
 class SearchPage extends Component {
 
     handleSubmit(ingredient) {
-        
+
     }
 
     render() {

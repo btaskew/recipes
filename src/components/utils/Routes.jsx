@@ -1,8 +1,8 @@
 import React from 'react';
 
 import {BrowserRouter, Route} from 'react-router-dom';
-import MainMenu from 'components/MainMenu';
-import SearchPage from 'components/SearchPage';
+import MainMenu from 'pages/MainMenu';
+import SearchPage from 'pages/SearchPage';
 
 function Routes() {
     return (
