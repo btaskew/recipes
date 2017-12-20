@@ -19,7 +19,7 @@ function SearchResults(props) {
                 <OptionLink
                     key={recipe.id}
                     text={recipe.name}
-                    link={`/recipes/${recipe.id}`}
+                    link={`/recipe/${recipe.id}/${recipe.name}`}
                 />
             ))}
         </ListGroup>
