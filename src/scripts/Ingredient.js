@@ -6,6 +6,10 @@ class Ingredient extends Database {
         return this.ingredients.find({name});
     }
 
+    findByRecipeId(recipeId) {
+        return this.ingredients.find({recipeId});
+    }
+
     relatedRecipes(ingredients) {
         const recipes = [];
 

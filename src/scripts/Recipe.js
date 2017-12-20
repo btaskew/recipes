@@ -15,6 +15,10 @@ class Recipe extends Database {
 
         return Ingredient.relatedRecipes(ingredients);
     }
+
+    relatedIngredients(id) {
+        return Ingredient.findByRecipeId(id);
+    }
 }
 
 export default new Recipe();

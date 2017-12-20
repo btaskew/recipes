@@ -22,6 +22,12 @@ body {
     float: right;
 }
 
+.label {
+    font-size: 100%;
+    font-weight: normal;
+    margin: 0.2em;
+}
+
 .searchResults {
     margin-top: 2em;
 }
