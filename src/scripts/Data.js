@@ -1,9 +1,9 @@
 class Data {
     getRecipes() {
         return [
-            {id: 1, recipe: 'Spaghetti carbonara'},
-            {id: 2, recipe: 'Stir fry'},
-            {id: 3, recipe: 'Bacon & tomato rice'}
+            {id: 1, name: 'Spaghetti carbonara'},
+            {id: 2, name: 'Stir fry'},
+            {id: 3, name: 'Bacon & tomato rice'}
         ];
     }
 

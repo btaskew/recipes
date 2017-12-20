@@ -12,3 +12,7 @@ body {
 .flex {
     display: flex;
 }
+
+.searchResults {
+    margin-top: 2em;
+}
