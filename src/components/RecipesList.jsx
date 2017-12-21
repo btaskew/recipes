@@ -17,9 +17,9 @@ function RecipesList(props) {
         <ListGroup className={props.styleName}>
             {props.recipes.map(recipe => (
                 <OptionLink
-                    key={recipe.id}
+                    key={recipe.$loki}
                     text={recipe.name}
-                    link={`/recipe/${recipe.id}/${recipe.name}`}
+                    link={`/recipe/${recipe.$loki}/${recipe.name}`}
                 />
             ))}
         </ListGroup>

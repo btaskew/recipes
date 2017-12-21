@@ -5,15 +5,15 @@ import {Button, FormControl} from 'react-bootstrap';
 class InputForm extends Component {
     constructor(props) {
         super(props);
-        this.state = {ingredient: ''};
+        this.state = {value: ''};
     }
 
     handleChange = e => {
-        this.setState({ingredient: e.target.value});
+        this.setState({value: e.target.value});
     }
 
     handleSubmit = () => {
-        this.props.submitForm(this.state.ingredient);
+        this.props.submitForm(this.state.value);
     }
 
     render() {
@@ -21,7 +21,7 @@ class InputForm extends Component {
             <div className="flex">
                 <FormControl
                     type="text"
-                    value={this.state.ingredient}
+                    value={this.state.value}
                     onChange={this.handleChange}
                     placeholder={this.props.inputText}
                 />

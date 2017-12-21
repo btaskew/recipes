@@ -8,8 +8,8 @@ class IngredientsList extends PureComponent {
             <div className="flex">
                 {this.props.ingredients.map(ingredient => (
                     <Ingredient
-                        key={ingredient.id}
-                        id={ingredient.id}
+                        key={ingredient.$loki}
+                        id={ingredient.$loki}
                         name={ingredient.name}
                     />
                 ))}

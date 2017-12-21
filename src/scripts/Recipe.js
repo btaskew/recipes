@@ -3,7 +3,7 @@ import Ingredient from 'scripts/Ingredient';
 
 class Recipe extends Database {
     findById(id) {
-        return this.recipes.find({id});
+        return this.recipes.find({$loki: id});
     }
 
     findByIngredient(ingredient) {
@@ -18,6 +18,13 @@ class Recipe extends Database {
 
     relatedIngredients(id) {
         return Ingredient.findByRecipeId(id);
+    }
+
+    addRecipe(recipe) {
+        this.recipes.insert({
+            name: recipe
+        });
+        console.log(this.recipes.find({name: recipe}));
     }
 }
 

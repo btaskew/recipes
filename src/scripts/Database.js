@@ -9,16 +9,12 @@ class Database {
     }
 
     setRecipes() {
-        this.recipes = this.database.addCollection('recipes', {
-            unique: ['id']
-        });
+        this.recipes = this.database.addCollection('recipes');
         this.recipes.insert(Data.getRecipes());
     }
 
     setIngredients() {
-        this.ingredients = this.database.addCollection('ingredients', {
-            unique: ['id']
-        });
+        this.ingredients = this.database.addCollection('ingredients');
         this.ingredients.insert(Data.getIngredients());
     }
 }
