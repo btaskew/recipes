@@ -6,6 +6,10 @@ class Recipe extends Database {
         return this.recipes.find({$loki: id});
     }
 
+    findByName(name) {
+        return this.recipes.find({name});
+    }
+
     findByIngredient(ingredient) {
         const ingredients = Ingredient.findByName(ingredient);
 
@@ -24,7 +28,7 @@ class Recipe extends Database {
         this.recipes.insert({
             name: recipe
         });
-        console.log(this.recipes.find({name: recipe}));
+        return this.findByName(recipe);
     }
 }
 

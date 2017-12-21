@@ -29,6 +29,6 @@ body {
     cursor: pointer;
 }
 
-.searchResults {
+.alert, .searchResults {
     margin-top: 2em;
 }
