@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 import {Button, FormControl} from 'react-bootstrap';
 
-class SearchForm extends Component {
+class InputForm extends Component {
     constructor(props) {
         super(props);
         this.state = {ingredient: ''};
@@ -23,12 +23,14 @@ class SearchForm extends Component {
                     type="text"
                     value={this.state.ingredient}
                     onChange={this.handleChange}
-                    placeholder="Enter ingredient"
+                    placeholder={this.props.inputText}
                 />
-                <Button bsStyle="primary" onClick={this.handleSubmit}>Search</Button>
+                <Button bsStyle="primary" onClick={this.handleSubmit}>
+                    {this.props.buttonText}
+                </Button>
             </div>
         );
     }
 }
 
-export default SearchForm;
+export default InputForm;

@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import Recipe from 'scripts/Recipe';
 
 import Page from 'components/utils/Page';
-import SearchForm from 'components/SearchForm';
+import InputForm from 'components/utils/InputForm';
 import RecipesList from 'components/RecipesList';
 
 class SearchPage extends Component {
@@ -20,9 +20,16 @@ class SearchPage extends Component {
     render() {
         return (
             <Page heading="Search by ingredient" homeIcon>
-                <SearchForm submitForm={this.handleSubmit} />
+                <InputForm
+                    submitForm={this.handleSubmit}
+                    buttonText="Search"
+                    inputText="Enter ingredient"
+                />
                 {this.state.recipes && (
-                    <RecipesList styleName="searchResults" recipes={this.state.recipes} />
+                    <RecipesList
+                        styleName="searchResults"
+                        recipes={this.state.recipes}
+                    />
                 )}
             </Page>
         );
