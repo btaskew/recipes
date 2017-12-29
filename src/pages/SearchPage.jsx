@@ -19,7 +19,7 @@ class SearchPage extends Component {
 
     render() {
         return (
-            <Page heading="Search by ingredient" homeIcon>
+            <Page heading="Search by ingredient">
                 <InputForm
                     submitForm={this.handleSubmit}
                     buttonText="Search"

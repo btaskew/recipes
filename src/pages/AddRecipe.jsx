@@ -20,7 +20,7 @@ class AddRecipe extends Component {
         }
 
         const recipe = Recipe.addRecipe(name);
-        
+
         if (!recipe || recipe.length < 1) {
             this.showError('Error saving recipe. Please try again later');
             return;
@@ -40,7 +40,7 @@ class AddRecipe extends Component {
 
     render() {
         return (
-            <Page heading="Add recipe" homeIcon>
+            <Page heading="Add recipe">
                 <InputForm
                     submitForm={this.handleSubmit}
                     buttonText="Add"

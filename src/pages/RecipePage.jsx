@@ -13,7 +13,6 @@ function RecipePage(props) {
                     heading={state.heading}
                     error={state.error}
                     noResult={state.noResult}
-                    homeIcon
                 >
                     {state.ingredients && (
                         <IngredientsList ingredients={state.ingredients} />

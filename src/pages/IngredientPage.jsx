@@ -13,7 +13,6 @@ function IngredientPage(props) {
                     heading={`Recipes using "${props.match.params.name}"`}
                     error={state.error}
                     noResult={state.noResult}
-                    homeIcon
                 >
                     {state.recipes && (
                         <RecipesList recipes={state.recipes} />

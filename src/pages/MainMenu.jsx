@@ -5,7 +5,7 @@ import Page from 'components/utils/Page';
 
 function MainMenu() {
     return (
-        <Page heading="Main Menu">
+        <Page heading="Main Menu" hideIcon>
             <MenuButtons />
         </Page>
     );
