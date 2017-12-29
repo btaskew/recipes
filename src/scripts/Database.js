@@ -1,9 +1,9 @@
-import loki from 'lokijs';
+import Loki from 'lokijs';
 import Data from 'scripts/Data';
 
 class Database {
     constructor() {
-        this.database = new loki('recipes.db');
+        this.database = new Loki('recipes.db');
         this.setRecipes();
         this.setIngredients();
     }
