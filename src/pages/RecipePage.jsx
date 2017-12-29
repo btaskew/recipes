@@ -9,8 +9,12 @@ function RecipePage(props) {
         <GetRecipes
             id={props.match.params.id}
             render={state => (
-                <Page heading={state.heading} homeIcon>
-                    {state.message}
+                <Page
+                    heading={state.heading}
+                    error={state.error}
+                    noResult={state.noResult}
+                    homeIcon
+                >
                     {state.ingredients && (
                         <IngredientsList ingredients={state.ingredients} />
                     )}

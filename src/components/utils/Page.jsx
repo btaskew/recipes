@@ -1,16 +1,31 @@
 import React from 'react';
-import {Modal} from 'react-bootstrap';
 
-import Heading from 'components/utils/Heading';
+import {Alert} from 'react-bootstrap';
+import PageContents from 'components/utils/PageContents';
 
 function Page(props) {
+    if (props.error) {
+        return (
+            <PageContents heading="Error" homeIcon={props.homeIcon}>
+                <Alert bsStyle="danger">
+                    Error loading results, please try again later
+                </Alert>
+            </PageContents>
+        );
+    }
+
+    if (props.noResult) {
+        return (
+            <PageContents heading="No result" homeIcon={props.homeIcon}>
+                <Alert bsStyle="info">No results found</Alert>
+            </PageContents>
+        );
+    }
+
     return (
-        <React.Fragment>
-            <Heading text={props.heading} homeIcon={props.homeIcon} />
-            <Modal.Body>
-                {props.children}
-            </Modal.Body>
-        </React.Fragment>
+        <PageContents heading={props.heading} homeIcon={props.homeIcon}>
+            {props.children}
+        </PageContents>
     );
 }
 

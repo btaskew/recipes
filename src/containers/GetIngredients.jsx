@@ -10,6 +10,14 @@ class GetIngredients extends Component {
 
     componentDidMount() {
         const recipes = Recipe.findByIngredient(this.props.name);
+        if (!recipes) {
+            this.setState({error: true});
+            return;
+        }
+        if (recipes.length < 1) {
+            this.setState({noResult: true});
+            return;
+        }
         this.setState({recipes});
     }
 
