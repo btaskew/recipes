@@ -27,7 +27,7 @@ class SearchPage extends Component {
                 />
                 {this.state.recipes && (
                     <RecipesList
-                        styleName="searchResults"
+                        styleName="topPadding"
                         recipes={this.state.recipes}
                     />
                 )}

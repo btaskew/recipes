@@ -29,6 +29,6 @@ body {
     cursor: pointer;
 }
 
-.alert, .searchResults {
+.topPadding {
     margin-top: 2em;
 }

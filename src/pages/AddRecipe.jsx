@@ -34,7 +34,7 @@ class AddRecipe extends Component {
 
     showError = message => {
         this.setState({
-            result: <Alert bsStyle="danger">{message}</Alert>
+            result: <Alert className="topPadding" bsStyle="danger">{message}</Alert>
         });
     }
 
