@@ -2,11 +2,11 @@ import React from 'react';
 
 import Page from 'components/utils/Page';
 import IngredientsList from 'components/IngredientsList';
-import GetRecipes from 'containers/GetRecipes';
+import GetIngredients from 'containers/GetIngredients';
 
 function RecipePage(props) {
     return (
-        <GetRecipes
+        <GetIngredients
             id={props.match.params.id}
             render={state => (
                 <Page

@@ -5,28 +5,20 @@ import Recipe from 'scripts/Recipe';
 class GetRecipes extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            ingredients: null,
-            heading: 'Loading...',
-            error: false,
-            noResult: false
-        };
+        this.state = {recipes: null};
     }
 
     componentDidMount() {
-        const recipeId = parseInt(this.props.id, 10);
-        const recipe = Recipe.findById(recipeId);
-
-        if (!recipe) {
+        const recipes = Recipe.findByIngredient(this.props.name);
+        if (!recipes) {
             this.setState({error: true});
             return;
         }
-        if (recipe.length < 1) {
+        if (recipes.length < 1) {
             this.setState({noResult: true});
             return;
         }
-        const ingredients = Recipe.relatedIngredients(recipeId);
-        this.setState({ingredients, heading: recipe[0].name});
+        this.setState({recipes});
     }
 
     render() {

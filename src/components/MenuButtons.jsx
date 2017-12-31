@@ -6,7 +6,7 @@ import OptionLink from 'components/utils/OptionLink';
 function MenuButtons() {
     return (
         <ListGroup>
-            <OptionLink link="/search" text="Search by recipe" />
+            <OptionLink link="/search" text="Search by ingredient" />
             <OptionLink link="/all" text="View all" />
             <OptionLink link="/add" text="Add recipe" />
         </ListGroup>
