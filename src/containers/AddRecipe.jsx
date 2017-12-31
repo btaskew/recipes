@@ -1,14 +1,16 @@
-import React, {Component} from 'react';
+import {Component} from 'react';
 
 import Recipe from 'scripts/Recipe';
-
-import {Alert} from 'react-bootstrap';
-import {Redirect} from 'react-router';
 
 class AddRecipe extends Component {
     constructor(props) {
         super(props);
-        this.state = {result: null};
+        this.state = {
+            error: false,
+            errorMessage: null,
+            success: false,
+            redirectPath: null
+        };
     }
 
     handleSubmit = name => {
@@ -24,24 +26,20 @@ class AddRecipe extends Component {
             return;
         }
         this.setState({
-            result: (
-                <Redirect to={`/recipe/${recipe[0].$loki}/${recipe[0].name}`} />
-            )
+            redirectPath: `/recipe/${recipe[0].$loki}/${recipe[0].name}`,
+            success: true
         });
     };
 
     showError = message => {
         this.setState({
-            result: (
-                <Alert className="topPadding" bsStyle="danger">
-                    {message}
-                </Alert>
-            )
+            error: true,
+            errorMessage: message
         });
     };
 
     render() {
-        return this.props.render(this.state.result, this.handleSubmit);
+        return this.props.render(this.state, this.handleSubmit);
     }
 }
 
