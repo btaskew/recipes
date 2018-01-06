@@ -4,7 +4,7 @@ import {BrowserRouter, Route} from 'react-router-dom';
 import MainMenu from 'pages/MainMenu';
 import SearchPage from 'pages/SearchPage';
 import AddRecipePage from 'pages/AddRecipePage';
-import RecipePage from 'pages/RecipePage';
+import RecipePageContainer from 'containers/RecipePageContainer';
 import IngredientPage from 'pages/IngredientPage';
 
 function Routes() {
@@ -14,7 +14,7 @@ function Routes() {
                 <Route path="/" exact component={MainMenu} />
                 <Route path="/search" component={SearchPage} />
                 <Route path="/add" component={AddRecipePage} />
-                <Route path="/recipe/:id/:name" component={RecipePage} />
+                <Route path="/recipe/:id/:name" component={RecipePageContainer} />
                 <Route path="/ingredient/:id/:name" component={IngredientPage} />
             </div>
         </BrowserRouter>

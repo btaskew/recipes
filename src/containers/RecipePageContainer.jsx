@@ -1,21 +1,24 @@
-import {Component} from 'react';
-
+import React, {Component} from 'react';
 import Recipe from 'scripts/Recipe';
 import Ingredient from 'scripts/Ingredient';
+
+import RecipePageView from 'views/RecipePageView';
 
 class GetIngredients extends Component {
     constructor(props) {
         super(props);
         this.state = {
             ingredients: null,
-            heading: 'Loading...',
+            heading: null,
+            loading: true,
             error: false,
+            errorMessage: null,
             noResult: false
         };
     }
 
     componentDidMount() {
-        const recipeId = parseInt(this.props.id, 10);
+        const recipeId = parseInt(this.props.match.params.id, 10);
         const recipe = Recipe.findById(recipeId);
 
         if (!recipe) {
@@ -27,17 +30,20 @@ class GetIngredients extends Component {
             return;
         }
         const ingredients = Recipe.relatedIngredients(recipeId);
-        this.setState({ingredients, heading: recipe[0].name});
+        this.setState({ingredients: ingredients, heading: recipe[0].name, loading: false});
     }
 
-    handleSubmit = ingredient => {
+    addIngredient = ingredient => {
+        this.setState({loading: true});
+
         if (!ingredient || ingredient === '') {
             this.showError('Please enter a value');
             return;
         }
 
-        const recipeId = parseInt(this.props.id, 10);
+        const recipeId = parseInt(this.props.match.params.id, 10);
         Ingredient.addIngredient(ingredient, recipeId);
+        this.setState({loading: false});
     };
 
     showError = message => {
@@ -48,7 +54,9 @@ class GetIngredients extends Component {
     };
 
     render() {
-        return this.props.render(this.state, this.handleSubmit);
+        return (
+            <RecipePageView {...this.state} addIngredient={this.addIngredient} />
+        );
     }
 }
 
