@@ -1,5 +1,6 @@
 - refactor containers and views - rename pages to views, remove render props and just render view
+- styling for add ingredient, clear input & refresh list on add
 
-- input form heading? default button text to
+- input form heading?
 
 - sort out errors - some are handled on Page, others on specific views
