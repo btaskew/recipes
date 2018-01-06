@@ -1,3 +1,5 @@
 - refactor containers and views - rename pages to views, remove render props and just render view
 
 - input form heading? default button text to
+
+- sort out errors - some are handled on Page, others on specific views

@@ -23,6 +23,13 @@ class Ingredient extends Database {
 
         return recipes;
     }
+
+    addIngredient(ingredient, recipeId) {
+        this.ingredients.insert({
+            name: ingredient,
+            recipeId: recipeId
+        });
+    }
 }
 
 export default new Ingredient();
