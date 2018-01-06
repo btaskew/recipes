@@ -1,6 +1,7 @@
-import {Component} from 'react';
-
+import React, {Component} from 'react';
 import Recipe from 'scripts/Recipe';
+
+import AddRecipeView from 'views/AddRecipeView';
 
 class AddRecipe extends Component {
     constructor(props) {
@@ -39,7 +40,9 @@ class AddRecipe extends Component {
     };
 
     render() {
-        return this.props.render(this.state, this.handleSubmit);
+        return (
+            <AddRecipeView {...this.state} handleSubmit={this.handleSubmit} />
+        );
     }
 }
 

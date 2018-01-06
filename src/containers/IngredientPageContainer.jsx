@@ -3,7 +3,7 @@ import Recipe from 'scripts/Recipe';
 
 import IngredientPageView from 'views/IngredientPageView';
 
-class GetRecipes extends Component {
+class IngredientPageContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -46,4 +46,4 @@ class GetRecipes extends Component {
     }
 }
 
-export default GetRecipes;
+export default IngredientPageContainer;
