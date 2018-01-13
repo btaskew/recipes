@@ -1,9 +1,8 @@
-- Seperate ingredient searching from RecipePageContainer into seperate IngredientListContainer that is rendered by RecipePageView
-
 - styling for add ingredient, clear input & refresh list on add
+    - Maybe move add recipe functionality somewhere else - seperate container
 
 - input form heading?
-- move validation for empty input to input form component 
+- move validation for empty input to input form component
 
 - sort out errors - some are handled on Page, others on specific views
 

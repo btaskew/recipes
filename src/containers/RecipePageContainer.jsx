@@ -8,11 +8,11 @@ class RecipePageContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            ingredients: null,
             heading: 'Loading...',
             loading: true,
             error: false,
-            errorMessage: null
+            errorMessage: null,
+            recipeFound: false
         };
     }
 
@@ -30,12 +30,7 @@ class RecipePageContainer extends Component {
             return;
         }
 
-        const ingredients = Recipe.relatedIngredients(recipeId);
-        this.setState({
-            ingredients: ingredients,
-            heading: recipe[0].name,
-            loading: false
-        });
+        this.setState({heading: recipe[0].name, recipeFound: true, loading: false});
     }
 
     addIngredient = ingredient => {
@@ -49,6 +44,7 @@ class RecipePageContainer extends Component {
         return (
             <RecipePageView
                 {...this.state}
+                recipeId={this.props.match.params.id}
                 addIngredient={this.addIngredient}
             />
         );
