@@ -1,10 +1,8 @@
-import React, {Component} from 'react';
+import {Component} from 'react';
 
 import Recipe from 'scripts/Recipe';
 
-import RecipeSearchView from 'views/RecipeSearchView';
-
-class RecipeSearchContainer extends Component {
+class RecipeSearch extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -14,7 +12,7 @@ class RecipeSearchContainer extends Component {
         };
     }
 
-    handleSubmit = ingredient => {
+    recipeSearch = ingredient => {
         this.setState({loading: true});
         const recipes = Recipe.findByIngredient(ingredient);
 
@@ -27,13 +25,8 @@ class RecipeSearchContainer extends Component {
     };
 
     render() {
-        return (
-            <RecipeSearchView
-                {...this.state}
-                handleSubmit={this.handleSubmit}
-            />
-        );
+        return this.props.render(this.state, this.recipeSearch);
     }
 }
 
-export default RecipeSearchContainer;
+export default RecipeSearch;

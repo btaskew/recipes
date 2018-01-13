@@ -1,14 +1,5 @@
-- styling for add ingredient, clear input & refresh list on add
+- clear input & refresh list on add
     - Maybe move add recipe functionality somewhere else - seperate container
-
-- input form heading?
-- move validation for empty input to input form component
-
-- sort out errors - some are handled on Page, others on specific views
-
-- add loading states to page
-
-- change print width to 100
 
 - research when to use pure components (for containers)
 
@@ -18,3 +9,8 @@
 - Remove recipe name from route to RecipePageContainer - isn't used
 - Remove ingredient id from route to IngredientPageContainer - isn't used
     - Alternatily change search function to work off of ingredient_id
+
+STYLING
+- change print width to 100
+- Alert styling
+- input form heading?
