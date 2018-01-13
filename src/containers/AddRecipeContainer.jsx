@@ -15,18 +15,13 @@ class AddRecipe extends Component {
     }
 
     handleSubmit = name => {
-        if (!name || name === '') {
-            this.showError('Please enter a value');
-            return;
-        }
-
         const recipe = Recipe.addRecipe(name);
 
         if (!recipe || recipe.length < 1) {
             this.showError('Error saving recipe. Please try again later');
             return;
         }
-        
+
         this.setState({
             redirectPath: `/recipe/${recipe[0].$loki}/${recipe[0].name}`,
             success: true

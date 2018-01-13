@@ -20,10 +20,6 @@ function RecipeSearchView(props) {
                 </Alert>
             )}
 
-            {props.error && (
-                <Alert bsStyle="danger">{props.errorMessage}</Alert>
-            )}
-
             {props.recipes && (
                 <RecipesList styleName="topPadding" recipes={props.recipes} />
             )}
