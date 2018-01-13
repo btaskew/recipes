@@ -7,4 +7,4 @@
 
 - change print width to 100
 
-- extend containers off of container class which handles loading, error state and showError method
+- research when to use pure components (for containers)

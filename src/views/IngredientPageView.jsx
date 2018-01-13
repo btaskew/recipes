@@ -5,15 +5,13 @@ import RecipesList from 'components/RecipesList';
 
 function IngredientPageView(props) {
     return (
-                <Page
-                    heading={`Recipes using "${props.ingredient}"`}
-                    error={props.error}
-                    noResult={props.noResult}
-                >
-                    {props.recipes && (
-                        <RecipesList recipes={props.recipes} />
-                    )}
-                </Page>
+        <Page
+            heading={`Recipes using "${props.ingredient}"`}
+            error={props.error}
+            noResult={props.noResult}
+        >
+            {props.recipes && <RecipesList recipes={props.recipes} />}
+        </Page>
     );
 }
 
