@@ -7,7 +7,7 @@ import InputForm from 'components/utils/InputForm';
 
 function AddRecipeView(props) {
     return (
-        <Page heading="Add recipe">
+        <Page heading="Add recipe" loading={props.loading}>
             <InputForm
                 submitForm={props.handleSubmit}
                 buttonText="Add"

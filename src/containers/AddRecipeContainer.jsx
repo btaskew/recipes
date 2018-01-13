@@ -9,29 +9,30 @@ class AddRecipe extends Component {
         this.state = {
             error: false,
             errorMessage: null,
+            loading: false,
             success: false,
             redirectPath: null
         };
     }
 
     handleSubmit = name => {
+        this.setState({loading: true});
+
         const recipe = Recipe.addRecipe(name);
 
         if (!recipe || recipe.length < 1) {
-            this.showError('Error saving recipe. Please try again later');
+            this.setState({
+                error: true,
+                errorMessage: 'Error saving recipe. Please try again later',
+                loading: false
+            });
             return;
         }
 
         this.setState({
             redirectPath: `/recipe/${recipe[0].$loki}/${recipe[0].name}`,
-            success: true
-        });
-    };
-
-    showError = message => {
-        this.setState({
-            error: true,
-            errorMessage: message
+            success: true,
+            loading: false
         });
     };
 

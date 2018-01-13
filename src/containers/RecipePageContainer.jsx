@@ -24,7 +24,8 @@ class RecipePageContainer extends Component {
             this.setState({
                 error: true,
                 errorMessage: 'Error loading recipe. Please try again later',
-                heading: 'Oops!'
+                heading: 'Oops!',
+                loading: false
             });
             return;
         }
@@ -38,16 +39,7 @@ class RecipePageContainer extends Component {
     }
 
     addIngredient = ingredient => {
-        if (!ingredient || ingredient === '') {
-            this.setState({
-                error: true,
-                errorMessage: 'Please enter a value'
-            });
-            return;
-        }
-
         this.setState({loading: true});
-
         const recipeId = parseInt(this.props.match.params.id, 10);
         Ingredient.addIngredient(ingredient, recipeId);
         this.setState({loading: false, error: false, errorMessage: null});
