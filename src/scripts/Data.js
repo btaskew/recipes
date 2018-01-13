@@ -18,8 +18,7 @@ class Data {
             {recipeId: 2, name: 'Noodles'},
             {recipeId: 3, name: 'Bacon'},
             {recipeId: 3, name: 'Tomato'},
-            {recipeId: 3, name: 'Peppers'},
-            {recipeId: 7, name: 'foobar'}
+            {recipeId: 3, name: 'Peppers'}
         ];
     }
 }

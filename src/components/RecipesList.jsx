@@ -10,7 +10,7 @@ function RecipesList(props) {
                 <OptionLink
                     key={recipe.$loki}
                     text={recipe.name}
-                    link={`/recipe/${recipe.$loki}/${recipe.name}`}
+                    link={`/recipe/${recipe.$loki}`}
                 />
             ))}
         </ListGroup>

@@ -40,6 +40,13 @@ class RecipePageContainer extends Component {
         this.setState({loading: false, error: false, errorMessage: null});
     };
 
+    shouldComponentUpdate(nextProps) {
+        if(this.props !== nextProps) {
+            return false;
+        }
+        return true;
+    }
+
     render() {
         return (
             <RecipePageView

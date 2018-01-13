@@ -1,12 +1,6 @@
 - clear input & refresh list on add
     - Maybe move add recipe functionality somewhere else - seperate container
 
-- research when to use pure components (for containers)
-
-- investigate similarity between RecipeSearch and IngredientPage - both search for and display list of recipes by ingredient
-    - Maybe have recipe search simply redirect to IngredientPageContainer
-
-- Remove recipe name from route to RecipePageContainer - isn't used
 - Remove ingredient id from route to IngredientPageContainer - isn't used
     - Alternatily change search function to work off of ingredient_id
 

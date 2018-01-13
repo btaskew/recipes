@@ -1,9 +1,9 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 
 import {Alert} from 'react-bootstrap';
 import {Button, FormControl} from 'react-bootstrap';
 
-class InputForm extends Component {
+class InputForm extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {

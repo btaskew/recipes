@@ -1,10 +1,10 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 
 import {Alert} from 'react-bootstrap';
 import Page from 'components/utils/Page';
 import RecipesList from 'components/RecipesList';
 
-class IngredientPageView extends Component {
+class IngredientPageView extends PureComponent {
     componentDidMount() {
         this.props.getRecipes(this.props.ingredient);
     }

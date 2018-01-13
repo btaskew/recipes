@@ -5,7 +5,7 @@ import {LinkContainer} from 'react-router-bootstrap';
 
 function Ingredient(props) {
     return (
-        <LinkContainer to={`/ingredient/${props.id}/${props.name}`}>
+        <LinkContainer to={`/ingredient/${props.name}`}>
             <Label bsStyle="primary">{props.name}</Label>
         </LinkContainer>
     );

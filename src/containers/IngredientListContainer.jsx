@@ -1,9 +1,9 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import Recipe from 'scripts/Recipe';
 
 import IngredientsList from 'components/IngredientsList';
 
-class IngredientListContainer extends Component {
+class IngredientListContainer extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {ingredients: null};
