@@ -8,8 +8,7 @@ class IngredientPageContainer extends Component {
         super(props);
         this.state = {
             recipes: null,
-            heading: null,
-            loading: true,
+            loading: false,
             error: false,
             errorMessage: null,
             noResult: false
@@ -19,7 +18,10 @@ class IngredientPageContainer extends Component {
     componentDidMount() {
         const recipes = Recipe.findByIngredient(this.props.match.params.name);
         if (!recipes) {
-            this.showError('Error loading recipes. Please try again later');
+            this.setState({
+                error: true,
+                errorMessage: 'Error loading recipes. Please try again later'
+            });
             return;
         }
         if (recipes.length < 1) {
@@ -28,13 +30,6 @@ class IngredientPageContainer extends Component {
         }
         this.setState({recipes});
     }
-
-    showError = message => {
-        this.setState({
-            error: true,
-            errorMessage: message
-        });
-    };
 
     render() {
         return (

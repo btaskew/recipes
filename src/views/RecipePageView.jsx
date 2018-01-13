@@ -1,18 +1,14 @@
 import React from 'react';
 
+import {Alert} from 'react-bootstrap';
 import Page from 'components/utils/Page';
 import IngredientsList from 'components/IngredientsList';
 import InputForm from 'components/utils/InputForm';
 
 function RecipePageView(props) {
     return (
-        <Page
-            heading={props.heading}
-            loading={props.loading}
-            error={props.error}
-            errorMessage={props.errorMessage}
-            noResult={props.noResult}
-        >
+        <Page heading={props.heading} loading={props.loading}>
+            {/* Change ingredients prop to recipeFound */}
             {props.ingredients && (
                 <React.Fragment>
                     <InputForm
@@ -23,6 +19,11 @@ function RecipePageView(props) {
                     <IngredientsList ingredients={props.ingredients} />
                 </React.Fragment>
             )}
+
+            {props.error && (
+                <Alert bsStyle="danger">{props.errorMessage}</Alert>
+            )}
+            
         </Page>
     );
 }

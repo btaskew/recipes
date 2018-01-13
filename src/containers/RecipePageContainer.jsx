@@ -4,16 +4,15 @@ import Ingredient from 'scripts/Ingredient';
 
 import RecipePageView from 'views/RecipePageView';
 
-class GetIngredients extends Component {
+class RecipePageContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
             ingredients: null,
-            heading: null,
+            heading: 'Loading...',
             loading: true,
             error: false,
-            errorMessage: null,
-            noResult: false
+            errorMessage: null
         };
     }
 
@@ -21,43 +20,47 @@ class GetIngredients extends Component {
         const recipeId = parseInt(this.props.match.params.id, 10);
         const recipe = Recipe.findById(recipeId);
 
-        if (!recipe) {
-            this.showError('Error loading recipe. Please try again later');
+        if (!recipe || recipe.length < 1) {
+            this.setState({
+                error: true,
+                errorMessage: 'Error loading recipe. Please try again later',
+                heading: 'Oops!'
+            });
             return;
         }
-        if (recipe.length < 1) {
-            this.setState({noResult: true});
-            return;
-        }
+
         const ingredients = Recipe.relatedIngredients(recipeId);
-        this.setState({ingredients: ingredients, heading: recipe[0].name, loading: false});
+        this.setState({
+            ingredients: ingredients,
+            heading: recipe[0].name,
+            loading: false
+        });
     }
 
     addIngredient = ingredient => {
-        this.setState({loading: true});
-
         if (!ingredient || ingredient === '') {
-            this.showError('Please enter a value');
+            this.setState({
+                error: true,
+                errorMessage: 'Please enter a value'
+            });
             return;
         }
 
+        this.setState({loading: true});
+
         const recipeId = parseInt(this.props.match.params.id, 10);
         Ingredient.addIngredient(ingredient, recipeId);
-        this.setState({loading: false});
-    };
-
-    showError = message => {
-        this.setState({
-            error: true,
-            errorMessage: message
-        });
+        this.setState({loading: false, error: false, errorMessage: null});
     };
 
     render() {
         return (
-            <RecipePageView {...this.state} addIngredient={this.addIngredient} />
+            <RecipePageView
+                {...this.state}
+                addIngredient={this.addIngredient}
+            />
         );
     }
 }
 
-export default GetIngredients;
+export default RecipePageContainer;

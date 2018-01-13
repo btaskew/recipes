@@ -4,7 +4,7 @@ import {Alert} from 'react-bootstrap';
 import Ingredient from 'components/Ingredient';
 
 function IngredientsList(props) {
-    if(props.ingredients.length < 1) {
+    if (props.ingredients.length < 1) {
         return <Alert bsStyle="info">No ingredients found</Alert>;
     }
 

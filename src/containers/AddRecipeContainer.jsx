@@ -26,6 +26,7 @@ class AddRecipe extends Component {
             this.showError('Error saving recipe. Please try again later');
             return;
         }
+        
         this.setState({
             redirectPath: `/recipe/${recipe[0].$loki}/${recipe[0].name}`,
             success: true

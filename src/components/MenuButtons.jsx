@@ -7,7 +7,6 @@ function MenuButtons() {
     return (
         <ListGroup>
             <OptionLink link="/search" text="Search by ingredient" />
-            <OptionLink link="/all" text="View all" />
             <OptionLink link="/add" text="Add recipe" />
         </ListGroup>
     );
