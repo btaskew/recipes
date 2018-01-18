@@ -1,7 +1,7 @@
 import React from 'react';
 
-import MenuButtons from 'components/MenuButtons';
-import Page from 'components/utils/Page';
+import Page from 'components/Page';
+import MenuButtons from 'mainMenu/MenuButtons';
 
 function MainMenu() {
     return (

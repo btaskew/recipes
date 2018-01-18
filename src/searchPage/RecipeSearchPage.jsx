@@ -1,6 +1,6 @@
 import React from 'react';
 import RecipeSearch from 'containers/RecipeSearch';
-import RecipeSearchView from 'views/RecipeSearchView';
+import RecipeSearchView from 'searchPage/RecipeSearchView';
 
 function RecipeSearchPage() {
     return (

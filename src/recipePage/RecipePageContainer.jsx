@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Recipe from 'scripts/Recipe';
 import Ingredient from 'scripts/Ingredient';
 
-import RecipePageView from 'views/RecipePageView';
+import RecipePageView from 'recipePage/RecipePageView';
 
 class RecipePageContainer extends Component {
     constructor(props) {

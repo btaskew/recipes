@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {Alert} from 'react-bootstrap';
-import PageContents from 'components/utils/PageContents';
+import PageContents from 'components/PageContents';
 
 function Page(props) {
     if (props.loading) {

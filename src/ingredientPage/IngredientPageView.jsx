@@ -1,7 +1,7 @@
 import React, {PureComponent} from 'react';
 
 import {Alert} from 'react-bootstrap';
-import Page from 'components/utils/Page';
+import Page from 'components/Page';
 import RecipesList from 'components/RecipesList';
 
 class IngredientPageView extends PureComponent {

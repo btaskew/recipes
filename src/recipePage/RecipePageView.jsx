@@ -1,9 +1,9 @@
 import React from 'react';
 
 import {Alert} from 'react-bootstrap';
-import Page from 'components/utils/Page';
-import InputForm from 'components/utils/InputForm';
-import IngredientsList from 'components/IngredientsList';
+import Page from 'components/Page';
+import InputForm from 'components/InputForm';
+import IngredientsList from 'recipePage/IngredientsList';
 
 function RecipePageView(props) {
     return (

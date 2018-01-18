@@ -1,6 +1,6 @@
 import React from 'react';
 import RecipeSearch from 'containers/RecipeSearch';
-import IngredientPageView from 'views/IngredientPageView';
+import IngredientPageView from 'ingredientPage/IngredientPageView';
 
 function IngredientPage(props) {
     return (

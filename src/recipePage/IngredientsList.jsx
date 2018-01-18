@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {Alert} from 'react-bootstrap';
-import Ingredient from 'components/Ingredient';
+import Ingredient from 'recipePage/Ingredient';
 
 function IngredientsList(props) {
     if(!props.ingredients) {

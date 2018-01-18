@@ -1,8 +1,8 @@
 import React from 'react';
 
 import {Alert} from 'react-bootstrap';
-import Page from 'components/utils/Page';
-import InputForm from 'components/utils/InputForm';
+import Page from 'components/Page';
+import InputForm from 'components/InputForm';
 import RecipesList from 'components/RecipesList';
 
 function RecipeSearchView(props) {

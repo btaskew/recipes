@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {Modal} from 'react-bootstrap';
-import Heading from 'components/utils/Heading';
+import Heading from 'components/Heading';
 
 function PageContents(props) {
     return (

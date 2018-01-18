@@ -1,11 +1,11 @@
 import React from 'react';
 
 import {BrowserRouter, Route} from 'react-router-dom';
-import IngredientPage from 'components/IngredientPage';
-import MainMenu from 'components/MainMenu';
-import RecipeSearchPage from 'components/RecipeSearchPage';
-import AddRecipeContainer from 'containers/AddRecipeContainer';
-import RecipePageContainer from 'containers/RecipePageContainer';
+import IngredientPage from 'ingredientPage/IngredientPage';
+import MainMenu from 'mainMenu/MainMenu';
+import RecipeSearchPage from 'searchPage/RecipeSearchPage';
+import AddRecipeContainer from 'addRecipePage/AddRecipeContainer';
+import RecipePageContainer from 'recipePage/RecipePageContainer';
 
 function Routes() {
     return (

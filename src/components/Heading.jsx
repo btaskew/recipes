@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {Modal} from 'react-bootstrap';
-import HomeIcon from 'components/utils/HomeIcon';
+import HomeIcon from 'components/HomeIcon';
 
 function Heading(props) {
     return (

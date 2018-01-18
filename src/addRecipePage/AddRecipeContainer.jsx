@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Recipe from 'scripts/Recipe';
 
-import AddRecipeView from 'views/AddRecipeView';
+import AddRecipeView from 'addRecipePage/AddRecipeView';
 
 class AddRecipe extends Component {
     constructor(props) {
