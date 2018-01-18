@@ -30,7 +30,7 @@ class AddRecipe extends Component {
         }
 
         this.setState({
-            redirectPath: `/recipe/${recipe[0].$loki}/${recipe[0].name}`,
+            redirectPath: `/recipe/${recipe.$loki}`,
             success: true,
             loading: false
         });

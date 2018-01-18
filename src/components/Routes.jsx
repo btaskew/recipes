@@ -13,9 +13,9 @@ function Routes() {
             <React.Fragment>
                 <Route path="/" exact component={MainMenu} />
                 <Route path="/add" component={AddRecipeContainer} />
-                <Route path="/recipe/:id" component={RecipePageContainer} />
+                <Route path="/recipe/:id" exact component={RecipePageContainer} />
                 <Route path="/search" component={RecipeSearchPage} />
-                <Route path="/ingredient/:name" component={IngredientPage} />
+                <Route path="/ingredient/:name" exact component={IngredientPage} />
             </React.Fragment>
         </BrowserRouter>
     );
