@@ -17,11 +17,11 @@ class RecipeSearch extends Component {
         const recipes = Recipe.findByIngredient(ingredient);
 
         if (!recipes || recipes.length < 1) {
-            this.setState({noResult: true, loading: false});
+            this.setState({recipes: null, noResult: true, loading: false});
             return;
         }
 
-        this.setState({recipes: recipes, loading: false});
+        this.setState({recipes: recipes, noResult: false, loading: false});
     };
 
     render() {

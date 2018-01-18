@@ -21,6 +21,7 @@ class InputForm extends PureComponent {
             this.setState({noValue: true});
             return;
         }
+        this.setState({noValue: false});
         this.props.submitForm(this.state.value);
     };
 
@@ -39,7 +40,7 @@ class InputForm extends PureComponent {
                     </Button>
                 </div>
 
-                {this.state.noValue && <Alert bsStyle="danger">Please enter a value</Alert>}
+                {this.state.noValue && <Alert bsStyle="danger" className="marginTop">Please enter a value</Alert>}
             </React.Fragment>
         );
     }

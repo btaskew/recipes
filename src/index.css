@@ -29,6 +29,6 @@ body {
     cursor: pointer;
 }
 
-.topPadding {
-    margin-top: 2em;
+.marginTop {
+    margin-top: 1.5em;
 }
