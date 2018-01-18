@@ -13,11 +13,18 @@ function IngredientsList(props) {
     }
 
     return (
-        <div className="flex marginTop">
-            {props.ingredients.map(ingredient => (
-                <Ingredient key={ingredient.$loki} id={ingredient.$loki} name={ingredient.name} />
-            ))}
-        </div>
+        <React.Fragment>
+            <p>Ingredients:</p>
+            <div className="flex">
+                {props.ingredients.map(ingredient => (
+                    <Ingredient
+                        key={ingredient.$loki}
+                        id={ingredient.$loki}
+                        name={ingredient.name}
+                    />
+                ))}
+            </div>
+        </React.Fragment>
     );
 }
 

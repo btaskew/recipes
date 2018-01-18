@@ -15,6 +15,7 @@ function RecipePageView(props) {
                         buttonText="Add"
                         inputText="Enter ingredient name"
                     />
+                    <hr />
                     <IngredientsList ingredients={props.ingredients} />
                 </React.Fragment>
             )}
