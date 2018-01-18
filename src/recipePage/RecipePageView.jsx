@@ -8,7 +8,6 @@ import IngredientsList from 'recipePage/IngredientsList';
 function RecipePageView(props) {
     return (
         <Page heading={props.heading} loading={props.loading}>
-
             {props.ingredients && (
                 <React.Fragment>
                     <InputForm
@@ -20,10 +19,7 @@ function RecipePageView(props) {
                 </React.Fragment>
             )}
 
-            {props.error && (
-                <Alert bsStyle="danger">{props.errorMessage}</Alert>
-            )}
-
+            {props.error && <Alert bsStyle="danger">{props.errorMessage}</Alert>}
         </Page>
     );
 }

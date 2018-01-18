@@ -4,7 +4,7 @@ import {Alert} from 'react-bootstrap';
 import Ingredient from 'recipePage/Ingredient';
 
 function IngredientsList(props) {
-    if(!props.ingredients) {
+    if (!props.ingredients) {
         return null;
     }
 
@@ -15,11 +15,7 @@ function IngredientsList(props) {
     return (
         <div className="flex">
             {props.ingredients.map(ingredient => (
-                <Ingredient
-                    key={ingredient.$loki}
-                    id={ingredient.$loki}
-                    name={ingredient.name}
-                />
+                <Ingredient key={ingredient.$loki} id={ingredient.$loki} name={ingredient.name} />
             ))}
         </div>
     );

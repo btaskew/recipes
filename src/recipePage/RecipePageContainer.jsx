@@ -41,7 +41,7 @@ class RecipePageContainer extends Component {
     };
 
     shouldComponentUpdate(nextProps) {
-        if(this.props !== nextProps) {
+        if (this.props !== nextProps) {
             return false;
         }
         return true;

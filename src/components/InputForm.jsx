@@ -39,9 +39,7 @@ class InputForm extends PureComponent {
                     </Button>
                 </div>
 
-                {this.state.noValue && (
-                    <Alert bsStyle="danger">Please enter a value</Alert>
-                )}
+                {this.state.noValue && <Alert bsStyle="danger">Please enter a value</Alert>}
             </React.Fragment>
         );
     }

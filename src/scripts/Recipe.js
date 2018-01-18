@@ -4,7 +4,7 @@ import Ingredient from 'scripts/Ingredient';
 class Recipe extends Database {
     findById(id) {
         const recipe = this.recipes.find({$loki: id})[0];
-        if(!recipe) {
+        if (!recipe) {
             return null;
         }
         recipe.ingredients = this.relatedIngredients(recipe.$loki);
@@ -12,8 +12,8 @@ class Recipe extends Database {
     }
 
     findByName(name) {
-        const recipe =  this.recipes.find({name})[0];
-        if(!recipe) {
+        const recipe = this.recipes.find({name})[0];
+        if (!recipe) {
             return null;
         }
         recipe.ingredients = this.relatedIngredients(recipe.$loki);

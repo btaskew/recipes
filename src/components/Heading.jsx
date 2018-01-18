@@ -8,7 +8,7 @@ function Heading(props) {
         <Modal.Header className="heading">
             <Modal.Title>
                 {props.text}
-                {!props.hideIcon && <HomeIcon /> }
+                {!props.hideIcon && <HomeIcon />}
             </Modal.Title>
         </Modal.Header>
     );

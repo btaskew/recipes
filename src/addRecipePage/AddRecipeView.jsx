@@ -14,9 +14,7 @@ function AddRecipeView(props) {
                 inputText="Enter recipe name"
             />
 
-            {props.error && (
-                <Alert bsStyle="danger">{props.errorMessage}</Alert>
-            )}
+            {props.error && <Alert bsStyle="danger">{props.errorMessage}</Alert>}
 
             {props.success && <Redirect to={props.redirectPath} />}
         </Page>

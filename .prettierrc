@@ -2,7 +2,7 @@
 # Use this file to define your defaults for prettier
 # For a list of all available options:
 # https://github.com/prettier/prettier#basic-configuration
-printWidth: 80
+printWidth: 100
 singleQuote: true
 tabWidth: 4
 bracketSpacing: false

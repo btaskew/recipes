@@ -14,15 +14,9 @@ function RecipeSearchView(props) {
                 inputText="Enter ingredient"
             />
 
-            {props.noResult && (
-                <Alert bsStyle="info">
-                    No recipes found for that ingredient
-                </Alert>
-            )}
+            {props.noResult && <Alert bsStyle="info">No recipes found for that ingredient</Alert>}
 
-            {props.recipes && (
-                <RecipesList styleName="topPadding" recipes={props.recipes} />
-            )}
+            {props.recipes && <RecipesList styleName="topPadding" recipes={props.recipes} />}
         </Page>
     );
 }

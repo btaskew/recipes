@@ -37,9 +37,7 @@ class AddRecipe extends Component {
     };
 
     render() {
-        return (
-            <AddRecipeView {...this.state} handleSubmit={this.handleSubmit} />
-        );
+        return <AddRecipeView {...this.state} handleSubmit={this.handleSubmit} />;
     }
 }
 
