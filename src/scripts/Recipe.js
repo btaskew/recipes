@@ -3,11 +3,15 @@ import Ingredient from 'scripts/Ingredient';
 
 class Recipe extends Database {
     findById(id) {
-        return this.recipes.find({$loki: id});
+        const recipe = this.recipes.find({$loki: id})[0];
+        recipe.ingredients = this.relatedIngredients(recipe.$loki);
+        return recipe;
     }
 
     findByName(name) {
-        return this.recipes.find({name});
+        const recipe =  this.recipes.find({name})[0];
+        recipe.ingredients = this.relatedIngredients(recipe.$loki);
+        return recipe;
     }
 
     findByIngredient(ingredient) {

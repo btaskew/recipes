@@ -3,19 +3,20 @@ import React from 'react';
 import {Alert} from 'react-bootstrap';
 import Page from 'components/utils/Page';
 import InputForm from 'components/utils/InputForm';
-import IngredientListContainer from 'containers/IngredientListContainer';
+import IngredientsList from 'components/IngredientsList';
 
 function RecipePageView(props) {
     return (
         <Page heading={props.heading} loading={props.loading}>
-            {props.recipeFound && (
+
+            {props.ingredients && (
                 <React.Fragment>
                     <InputForm
                         submitForm={props.addIngredient}
                         buttonText="Add"
                         inputText="Enter ingredient name"
                     />
-                    <IngredientListContainer recipeId={props.recipeId} />
+                    <IngredientsList ingredients={props.ingredients} />
                 </React.Fragment>
             )}
 

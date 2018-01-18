@@ -1,8 +1,7 @@
 - clear input & refresh list on add
     - Maybe move add recipe functionality somewhere else - seperate container
 
-- Remove ingredient id from route to IngredientPageContainer - isn't used
-    - Alternatily change search function to work off of ingredient_id
+- Remove IngredientListContainer, change recipe search in RecipePageContainer to also return associated ingredients
 
 STYLING
 - change print width to 100

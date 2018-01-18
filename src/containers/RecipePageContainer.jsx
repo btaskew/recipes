@@ -12,7 +12,7 @@ class RecipePageContainer extends Component {
             loading: true,
             error: false,
             errorMessage: null,
-            recipeFound: false
+            ingredients: null
         };
     }
 
@@ -30,7 +30,7 @@ class RecipePageContainer extends Component {
             return;
         }
 
-        this.setState({heading: recipe[0].name, recipeFound: true, loading: false});
+        this.setState({heading: recipe.name, ingredients: recipe.ingredients, loading: false});
     }
 
     addIngredient = ingredient => {

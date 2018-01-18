@@ -16,8 +16,8 @@ class Ingredient extends Database {
         for (const i in ingredients) {
             const item = ingredients[i];
             const recipe = Recipe.findById(item.recipeId);
-            if (recipe !== null && recipe.length > 0) {
-                recipes.push(recipe[0]);
+            if (recipe !== null) {
+                recipes.push(recipe);
             }
         }
 
