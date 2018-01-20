@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import {Alert} from 'react-bootstrap';
 import Page from 'components/Page';
@@ -24,5 +25,18 @@ function RecipePageView(props) {
         </Page>
     );
 }
+
+RecipePageView.propTypes = {
+    addIngredient: PropTypes.func.isRequired,
+    error: PropTypes.bool.isRequired,
+    heading: PropTypes.string.isRequired,
+    loading: PropTypes.bool.isRequired,
+    errorMessage: PropTypes.string,
+    ingredients: PropTypes.array
+};
+RecipePageView.defaultProps = {
+    errorMessage: 'Error loading recipes',
+    ingredients: []
+};
 
 export default RecipePageView;

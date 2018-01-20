@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import {Alert} from 'react-bootstrap';
 import Ingredient from 'recipePage/Ingredient';
@@ -27,5 +28,12 @@ function IngredientsList(props) {
         </React.Fragment>
     );
 }
+
+IngredientsList.propTypes = {
+    ingredients: PropTypes.array
+};
+IngredientsList.defaultProps = {
+    ingredients: []
+};
 
 export default IngredientsList;

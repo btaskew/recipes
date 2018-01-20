@@ -21,7 +21,7 @@ class RecipeSearch extends Component {
             return;
         }
 
-        this.setState({recipes: recipes, noResult: true, loading: false});
+        this.setState({recipes: recipes, noResult: false, loading: false});
     };
 
     render() {

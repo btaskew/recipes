@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import {Label} from 'react-bootstrap';
 import {LinkContainer} from 'react-router-bootstrap';
@@ -10,5 +11,9 @@ function Ingredient(props) {
         </LinkContainer>
     );
 }
+
+Ingredient.propTypes = {
+    name: PropTypes.string.isRequired
+};
 
 export default Ingredient;

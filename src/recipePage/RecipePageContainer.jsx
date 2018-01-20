@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import Recipe from 'scripts/Recipe';
 import Ingredient from 'scripts/Ingredient';
 
@@ -57,5 +58,16 @@ class RecipePageContainer extends Component {
         );
     }
 }
+
+RecipePageContainer.propTypes = {
+    match: PropTypes.object
+};
+RecipePageContainer.defaultProps = {
+    match: {
+        params: {
+            id: null
+        }
+    }
+};
 
 export default RecipePageContainer;
