@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import {Alert} from 'react-bootstrap';
 import Page from 'components/Page';
@@ -24,5 +25,15 @@ function RecipeSearchView(props) {
         </Page>
     );
 }
+
+RecipeSearchView.propTypes = {
+    handleSubmit: PropTypes.func.isRequired,
+    loading: PropTypes.bool.isRequired,
+    noResult: PropTypes.bool.isRequired,
+    recipes: PropTypes.array
+};
+RecipeSearchView.defaultProps = {
+    recipes: []
+};
 
 export default RecipeSearchView;
