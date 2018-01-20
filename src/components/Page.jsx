@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import {Alert} from 'react-bootstrap';
 import PageContents from 'components/PageContents';
@@ -21,5 +22,17 @@ function Page(props) {
         </PageContents>
     );
 }
+
+Page.propTypes = {
+    children: PropTypes.node.isRequired,
+    loading: PropTypes.bool,
+    heading: PropTypes.string,
+    hideIcon: PropTypes.bool
+};
+Page.defaultProps = {
+    heading: null,
+    hideIcon: false,
+    loading: false
+};
 
 export default Page;

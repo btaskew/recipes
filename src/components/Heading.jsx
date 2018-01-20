@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import {Modal} from 'react-bootstrap';
 import HomeIcon from 'components/HomeIcon';
@@ -13,5 +14,13 @@ function Heading(props) {
         </Modal.Header>
     );
 }
+
+Heading.propTypes = {
+    text: PropTypes.string.isRequired,
+    hideIcon: PropTypes.bool
+};
+Heading.defaultProps = {
+    hideIcon: false
+};
 
 export default Heading;

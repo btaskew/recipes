@@ -1,4 +1,5 @@
 import {Component} from 'react';
+import PropTypes from 'prop-types';
 
 import Recipe from 'scripts/Recipe';
 
@@ -28,5 +29,9 @@ class RecipeSearch extends Component {
         return this.props.render(this.state, this.recipeSearch);
     }
 }
+
+RecipeSearch.propTypes = {
+    render: PropTypes.func.isRequired
+};
 
 export default RecipeSearch;

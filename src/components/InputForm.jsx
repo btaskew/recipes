@@ -1,4 +1,5 @@
 import React, {PureComponent} from 'react';
+import PropTypes from 'prop-types';
 
 import {Alert} from 'react-bootstrap';
 import {Button, FormControl} from 'react-bootstrap';
@@ -45,5 +46,15 @@ class InputForm extends PureComponent {
         );
     }
 }
+
+InputForm.propTypes = {
+    submitForm: PropTypes.func.isRequired,
+    inputText: PropTypes.string,
+    buttonText: PropTypes.string,
+};
+InputForm.defaultProps = {
+    inputText: '',
+    buttonText: 'Submit'
+};
 
 export default InputForm;
