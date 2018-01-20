@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import {Alert} from 'react-bootstrap';
 import {Redirect} from 'react-router';
@@ -20,5 +21,14 @@ function AddRecipeView(props) {
         </Page>
     );
 }
+
+AddRecipeView.propTypes = {
+    error: PropTypes.bool.isRequired,
+    handleSubmit: PropTypes.func.isRequired,
+    loading: PropTypes.bool.isRequired,
+    success: PropTypes.bool.isRequired,
+    errorMessage: PropTypes.string,
+    redirectPath: PropTypes.string
+};
 
 export default AddRecipeView;
