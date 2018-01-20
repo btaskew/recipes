@@ -17,4 +17,6 @@ function RecipesList(props) {
     );
 }
 
+//Should account for when no recipes are given
+
 export default RecipesList;

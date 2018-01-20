@@ -30,5 +30,9 @@ AddRecipeView.propTypes = {
     errorMessage: PropTypes.string,
     redirectPath: PropTypes.string
 };
+AddRecipeView.defaultProps = {
+    errorMessage: 'Error adding recipe',
+    redirectPath: '/'
+};
 
 export default AddRecipeView;

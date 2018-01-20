@@ -1,4 +1,5 @@
 import React, {PureComponent} from 'react';
+import PropTypes from 'prop-types';
 
 import {Alert} from 'react-bootstrap';
 import Page from 'components/Page';
@@ -21,5 +22,17 @@ class IngredientPageView extends PureComponent {
         );
     }
 }
+
+IngredientPageView.propTypes = {
+    ingredient: PropTypes.string.isRequired,
+    getRecipes: PropTypes.func.isRequired,
+    loading: PropTypes.bool.isRequired,
+    noResult: PropTypes.bool,
+    recipes: PropTypes.array
+};
+IngredientPageView.defaultProps = {
+    noResult: false,
+    recipes: []
+};
 
 export default IngredientPageView;

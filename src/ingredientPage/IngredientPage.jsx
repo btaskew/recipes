@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import RecipeSearch from 'containers/RecipeSearch';
 import IngredientPageView from 'ingredientPage/IngredientPageView';
 
@@ -15,5 +17,16 @@ function IngredientPage(props) {
         />
     );
 }
+
+IngredientPage.propTypes = {
+    match: PropTypes.object
+};
+IngredientPage.defaultProps = {
+    match: {
+        params: {
+            name: null
+        }
+    }
+};
 
 export default IngredientPage;
