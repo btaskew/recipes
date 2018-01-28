@@ -16,7 +16,7 @@ function IngredientsList(props) {
     return (
         <React.Fragment>
             <p>Ingredients:</p>
-            <div className="flex flexWrap marginBottom">
+            <div className="flex flex-wrap margin-bottom">
                 {props.ingredients.map(ingredient => (
                     <Ingredient
                         key={ingredient.$loki}

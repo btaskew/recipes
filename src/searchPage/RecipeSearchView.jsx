@@ -16,12 +16,12 @@ function RecipeSearchView(props) {
             />
 
             {props.noResult && (
-                <Alert bsStyle="info" className="marginTop">
+                <Alert bsStyle="info" className="margin-top">
                     No recipes found for that ingredient
                 </Alert>
             )}
 
-            {props.recipes && <RecipesList styleName="marginTop" recipes={props.recipes} />}
+            {props.recipes && <RecipesList styleName="margin-top" recipes={props.recipes} />}
         </Page>
     );
 }

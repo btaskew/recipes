@@ -42,7 +42,7 @@ class InputForm extends PureComponent {
                     </Button>
                 </div>
 
-                {this.state.noValue && <Alert bsStyle="danger" className="marginTop">Please enter a value</Alert>}
+                {this.state.noValue && <Alert bsStyle="danger" className="margin-top">Please enter a value</Alert>}
             </React.Fragment>
         );
     }
