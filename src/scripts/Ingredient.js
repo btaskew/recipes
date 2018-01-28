@@ -25,6 +25,10 @@ class Ingredient extends Database {
     }
 
     addIngredient(ingredient, recipeId) {
+        if(this.findByName(ingredient)[0]) {
+            return 'Ingredient present';
+        }
+
         this.ingredients.insert({
             name: ingredient,
             recipeId: recipeId

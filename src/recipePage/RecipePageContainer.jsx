@@ -48,6 +48,15 @@ class RecipePageContainer extends Component {
             return;
         }
 
+        if (recipeIngredient === 'Ingredient present') {
+            this.setState({
+                error: true,
+                errorMessage: 'Ingredient already in the recipe! Please add a new ingredient',
+                loading: false
+            });
+            return;
+        }
+
         this.setState(prevState => ({
             loading: false,
             error: false,
