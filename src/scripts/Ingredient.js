@@ -29,6 +29,7 @@ class Ingredient extends Database {
             name: ingredient,
             recipeId: recipeId
         });
+        return this.findByName(ingredient)[0];
     }
 }
 

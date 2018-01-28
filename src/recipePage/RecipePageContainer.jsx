@@ -37,8 +37,23 @@ class RecipePageContainer extends Component {
     addIngredient = ingredient => {
         this.setState({loading: true});
         const recipeId = parseInt(this.props.match.params.id, 10);
-        Ingredient.addIngredient(ingredient, recipeId);
-        this.setState({loading: false, error: false, errorMessage: null});
+        const recipeIngredient = Ingredient.addIngredient(ingredient, recipeId);
+
+        if (!recipeIngredient) {
+            this.setState({
+                error: true,
+                errorMessage: 'Error adding ingredient. Please try again later',
+                loading: false
+            });
+            return;
+        }
+
+        this.setState(prevState => ({
+            loading: false,
+            error: false,
+            errorMessage: null,
+            ingredients: prevState.ingredients.concat(recipeIngredient)
+        }));
     };
 
     shouldComponentUpdate(nextProps) {
