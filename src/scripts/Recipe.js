@@ -4,18 +4,22 @@ import Ingredient from 'scripts/Ingredient';
 class Recipe extends Database {
     findById(id) {
         const recipe = this.recipes.find({$loki: id})[0];
+
         if (!recipe) {
             return null;
         }
+
         recipe.ingredients = this.relatedIngredients(recipe.$loki);
         return recipe;
     }
 
     findByName(name) {
         const recipe = this.recipes.find({name})[0];
+
         if (!recipe) {
             return null;
         }
+
         recipe.ingredients = this.relatedIngredients(recipe.$loki);
         return recipe;
     }
@@ -34,10 +38,21 @@ class Recipe extends Database {
         return Ingredient.findByRecipeId(id);
     }
 
+    hasIngredient(ingredientName, recipeId) {
+        const matchedIngredient = Ingredient.fromRecipe(ingredientName, recipeId);
+
+        if (!matchedIngredient.length) {
+            return false;
+        }
+
+        return true;
+    }
+
     addRecipe(recipe) {
         this.recipes.insert({
             name: recipe
         });
+        
         return this.findByName(recipe);
     }
 }

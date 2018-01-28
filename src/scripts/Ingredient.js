@@ -24,8 +24,14 @@ class Ingredient extends Database {
         return recipes;
     }
 
+    fromRecipe(ingredientName, recipeId) {
+        return this.ingredients.where(ingredient => {
+            return ingredient.name === ingredientName && ingredient.recipeId === recipeId;
+        });
+    }
+
     addIngredient(ingredient, recipeId) {
-        if(this.findByName(ingredient)[0]) {
+        if(Recipe.hasIngredient(ingredient, recipeId)) {
             return 'Ingredient present';
         }
 
@@ -33,7 +39,8 @@ class Ingredient extends Database {
             name: ingredient,
             recipeId: recipeId
         });
-        return this.findByName(ingredient)[0];
+        
+        return this.fromRecipe(ingredient, recipeId)[0];
     }
 }
 
