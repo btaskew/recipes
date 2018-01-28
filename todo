@@ -1,13 +1,6 @@
 - clear input & refresh list on add
     - Maybe move add recipe functionality somewhere else - seperate container
 
-STYLING
-- change print width to 100
-- Alert styling
-- input form heading?
-
 - no routes page
 
 - tests
-
-- propTypes

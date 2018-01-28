@@ -18,12 +18,13 @@ class InputForm extends PureComponent {
     };
 
     handleSubmit = () => {
-        if (!this.state.value || this.state.value === '') {
+        const inputValue = this.state.value;
+        if (!inputValue || inputValue === '') {
             this.setState({noValue: true});
             return;
         }
-        this.setState({noValue: false});
-        this.props.submitForm(this.state.value);
+        this.setState({noValue: false, value: ''});
+        this.props.submitForm(inputValue);
     };
 
     render() {
