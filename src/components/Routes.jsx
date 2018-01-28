@@ -1,21 +1,25 @@
 import React from 'react';
 
-import {BrowserRouter, Route} from 'react-router-dom';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import IngredientPage from 'ingredientPage/IngredientPage';
 import MainMenu from 'mainMenu/MainMenu';
 import RecipeSearchPage from 'searchPage/RecipeSearchPage';
 import AddRecipeContainer from 'addRecipePage/AddRecipeContainer';
 import RecipePageContainer from 'recipePage/RecipePageContainer';
+import NoRoute from 'components/NoRoute';
 
 function Routes() {
     return (
         <BrowserRouter>
             <React.Fragment>
-                <Route path="/" exact component={MainMenu} />
-                <Route path="/add" component={AddRecipeContainer} />
-                <Route path="/recipe/:id" exact component={RecipePageContainer} />
-                <Route path="/search" component={RecipeSearchPage} />
-                <Route path="/ingredient/:name" exact component={IngredientPage} />
+                <Switch>
+                    <Route path="/" exact component={MainMenu} />
+                    <Route path="/add" exact component={AddRecipeContainer} />
+                    <Route path="/recipe/:id" exact component={RecipePageContainer} />
+                    <Route path="/search" exact component={RecipeSearchPage} />
+                    <Route path="/ingredient/:name" exact component={IngredientPage} />
+                    <Route component={NoRoute} />
+                </Switch>
             </React.Fragment>
         </BrowserRouter>
     );
