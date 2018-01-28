@@ -18,6 +18,10 @@ body {
     display: flex;
 }
 
+.flexWrap {
+    flex-wrap: wrap;
+}
+
 .float-right {
     float: right;
 }
