@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainMenu renders correctly 1`] = `
+Array [
+  <div
+    className="heading modal-header"
+  >
+    <h4
+      className="modal-title"
+    >
+      Main menu
+    </h4>
+  </div>,
+  <div
+    className="modal-body"
+  >
+    <div
+      className="list-group"
+    >
+      <a
+        className="list-group-item"
+        href="/search"
+        onClick={[Function]}
+        style={undefined}
+      >
+        Search by ingredient
+      </a>
+      <a
+        className="list-group-item"
+        href="/add"
+        onClick={[Function]}
+        style={undefined}
+      >
+        Add recipe
+      </a>
+    </div>
+  </div>,
+]
+`;
