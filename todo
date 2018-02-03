@@ -1,6 +1,1 @@
-- clear input & refresh list on add
-    - Maybe move add recipe functionality somewhere else - seperate container
-
-- no routes page
-
 - tests
