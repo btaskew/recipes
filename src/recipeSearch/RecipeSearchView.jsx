@@ -29,7 +29,7 @@ function RecipeSearchView(props) {
 RecipeSearchView.propTypes = {
     handleSubmit: PropTypes.func.isRequired,
     loading: PropTypes.bool.isRequired,
-    noResult: PropTypes.bool.isRequired,
+    noResult: PropTypes.bool,
     recipes: PropTypes.array
 };
 RecipeSearchView.defaultProps = {

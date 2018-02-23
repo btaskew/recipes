@@ -1,10 +1,24 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
+import IngredientPage from 'ingredientPage/IngredientPage';
 import IngredientPageView from 'ingredientPage/IngredientPageView';
 import {MemoryRouter} from 'react-router';
 
 describe('Ingredient page', () => {
+    it('renders correctly', () => {
+        const ingredientPage = renderer
+            .create(
+                <MemoryRouter>
+                    <IngredientPage />
+                </MemoryRouter>
+            )
+            .toJSON();
+        expect(ingredientPage).toMatchSnapshot();
+    });
+});
+
+describe('Ingredient page view', () => {
     it('renders loading correctly', () => {
         const ingredientPage = renderer
             .create(

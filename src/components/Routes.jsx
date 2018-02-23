@@ -3,7 +3,7 @@ import React from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import IngredientPage from 'ingredientPage/IngredientPage';
 import MainMenu from 'mainMenu/MainMenu';
-import RecipeSearchPage from 'searchPage/RecipeSearchPage';
+import RecipeSearchPage from 'recipeSearch/RecipeSearchPage';
 import AddRecipeContainer from 'addRecipePage/AddRecipeContainer';
 import RecipePageContainer from 'recipePage/RecipePageContainer';
 import NoRoute from 'components/NoRoute';

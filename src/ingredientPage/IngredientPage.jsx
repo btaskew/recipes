@@ -24,7 +24,7 @@ IngredientPage.propTypes = {
 IngredientPage.defaultProps = {
     match: {
         params: {
-            name: null
+            name: ''
         }
     }
 };
