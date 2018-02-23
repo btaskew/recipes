@@ -27,16 +27,15 @@ function RecipePageView(props) {
 }
 
 RecipePageView.propTypes = {
-    addIngredient: PropTypes.func.isRequired,
-    error: PropTypes.bool.isRequired,
     heading: PropTypes.string.isRequired,
     loading: PropTypes.bool.isRequired,
+    addIngredient: PropTypes.func,
+    error: PropTypes.bool,
     errorMessage: PropTypes.string,
     ingredients: PropTypes.array
 };
 RecipePageView.defaultProps = {
     errorMessage: 'Error loading recipes',
-    ingredients: []
 };
 
 export default RecipePageView;
