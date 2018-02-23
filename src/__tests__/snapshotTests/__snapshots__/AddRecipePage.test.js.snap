@@ -1,0 +1,125 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Add recipe page renders an error correctly 1`] = `
+Array [
+  <div
+    className="heading modal-header"
+  >
+    <h4
+      className="modal-title"
+    >
+      Add recipe
+      <span
+        className="float-right active glyphicon glyphicon-home"
+        href="/"
+        onClick={[Function]}
+        style={Object {}}
+      />
+    </h4>
+  </div>,
+  <div
+    className="modal-body"
+  >
+    <div
+      className="flex"
+    >
+      <input
+        className="form-control"
+        id={undefined}
+        onChange={[Function]}
+        placeholder="Enter recipe name"
+        type="text"
+        value=""
+      />
+      <button
+        className="btn btn-primary"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+      >
+        Add
+      </button>
+    </div>
+    <div
+      className="alert alert-danger"
+      role="alert"
+    >
+      Error
+    </div>
+  </div>,
+]
+`;
+
+exports[`Add recipe page renders loading correctly 1`] = `
+Array [
+  <div
+    className="heading modal-header"
+  >
+    <h4
+      className="modal-title"
+    >
+      Add recipe
+      <span
+        className="float-right active glyphicon glyphicon-home"
+        href="/"
+        onClick={[Function]}
+        style={Object {}}
+      />
+    </h4>
+  </div>,
+  <div
+    className="modal-body"
+  >
+    <div
+      className="alert alert-info"
+      role="alert"
+    >
+      Loading...
+    </div>
+  </div>,
+]
+`;
+
+exports[`Add recipe page renders normally correctly 1`] = `
+Array [
+  <div
+    className="heading modal-header"
+  >
+    <h4
+      className="modal-title"
+    >
+      Add recipe
+      <span
+        className="float-right active glyphicon glyphicon-home"
+        href="/"
+        onClick={[Function]}
+        style={Object {}}
+      />
+    </h4>
+  </div>,
+  <div
+    className="modal-body"
+  >
+    <div
+      className="flex"
+    >
+      <input
+        className="form-control"
+        id={undefined}
+        onChange={[Function]}
+        placeholder="Enter recipe name"
+        type="text"
+        value=""
+      />
+      <button
+        className="btn btn-primary"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+      >
+        Add
+      </button>
+    </div>
+  </div>,
+]
+`;

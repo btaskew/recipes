@@ -11,13 +11,16 @@ class InputForm extends PureComponent {
             value: '',
             noValue: false
         };
+
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleChange = e => {
+    handleChange(e) {
         this.setState({value: e.target.value});
-    };
+    }
 
-    handleSubmit = () => {
+    handleSubmit() {
         const inputValue = this.state.value;
         if (!inputValue || inputValue === '') {
             this.setState({noValue: true});
@@ -25,7 +28,7 @@ class InputForm extends PureComponent {
         }
         this.setState({noValue: false, value: ''});
         this.props.submitForm(inputValue);
-    };
+    }
 
     render() {
         return (
