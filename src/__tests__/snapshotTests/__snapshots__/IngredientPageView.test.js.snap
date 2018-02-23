@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Ingredient page renders loading correctly 1`] = `
+Array [
+  <div
+    className="heading modal-header"
+  >
+    <h4
+      className="modal-title"
+    >
+      Recipes using "Test"
+      <span
+        className="float-right active glyphicon glyphicon-home"
+        href="/"
+        onClick={[Function]}
+        style={Object {}}
+      />
+    </h4>
+  </div>,
+  <div
+    className="modal-body"
+  >
+    <div
+      className="alert alert-info"
+      role="alert"
+    >
+      Loading...
+    </div>
+  </div>,
+]
+`;
+
+exports[`Ingredient page renders when no result correctly 1`] = `
+Array [
+  <div
+    className="heading modal-header"
+  >
+    <h4
+      className="modal-title"
+    >
+      Recipes using "Test"
+      <span
+        className="float-right active glyphicon glyphicon-home"
+        href="/"
+        onClick={[Function]}
+        style={Object {}}
+      />
+    </h4>
+  </div>,
+  <div
+    className="modal-body"
+  >
+    <div
+      className="alert alert-info"
+      role="alert"
+    >
+      No recipes found for that ingredient
+    </div>
+    <ul
+      className="list-group"
+    />
+  </div>,
+]
+`;
+
+exports[`Ingredient page renders with recipes correctly 1`] = `
+Array [
+  <div
+    className="heading modal-header"
+  >
+    <h4
+      className="modal-title"
+    >
+      Recipes using "Test"
+      <span
+        className="float-right active glyphicon glyphicon-home"
+        href="/"
+        onClick={[Function]}
+        style={Object {}}
+      />
+    </h4>
+  </div>,
+  <div
+    className="modal-body"
+  >
+    <ul
+      className="list-group"
+    />
+  </div>,
+]
+`;
