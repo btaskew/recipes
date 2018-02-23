@@ -15,6 +15,8 @@ class RecipePageContainer extends Component {
             errorMessage: null,
             ingredients: null
         };
+
+        this.addIngredient = this.addIngredient.bind(this);
     }
 
     componentDidMount() {
@@ -34,7 +36,7 @@ class RecipePageContainer extends Component {
         this.setState({heading: recipe.name, ingredients: recipe.ingredients, loading: false});
     }
 
-    addIngredient = ingredient => {
+    addIngredient(ingredient) {
         this.setState({loading: true});
         const recipeId = parseInt(this.props.match.params.id, 10);
         const recipeIngredient = Ingredient.addIngredient(ingredient, recipeId);
@@ -63,7 +65,7 @@ class RecipePageContainer extends Component {
             errorMessage: null,
             ingredients: prevState.ingredients.concat(recipeIngredient)
         }));
-    };
+    }
 
     shouldComponentUpdate(nextProps) {
         if (this.props !== nextProps) {

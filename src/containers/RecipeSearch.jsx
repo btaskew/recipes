@@ -11,9 +11,11 @@ class RecipeSearch extends Component {
             noResult: false,
             recipes: null
         };
+
+        this.recipeSearch = this.recipeSearch.bind(this);
     }
 
-    recipeSearch = ingredient => {
+    recipeSearch(ingredient) {
         this.setState({loading: true});
         const recipes = Recipe.findByIngredient(ingredient);
 
@@ -23,7 +25,7 @@ class RecipeSearch extends Component {
         }
 
         this.setState({recipes: recipes, noResult: false, loading: false});
-    };
+    }
 
     render() {
         return this.props.render(this.state, this.recipeSearch);

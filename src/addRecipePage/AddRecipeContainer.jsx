@@ -13,9 +13,11 @@ class AddRecipe extends Component {
             success: false,
             redirectPath: null
         };
+
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleSubmit = name => {
+    handleSubmit(name) {
         this.setState({loading: true});
 
         const recipe = Recipe.addRecipe(name);
@@ -34,7 +36,7 @@ class AddRecipe extends Component {
             success: true,
             loading: false
         });
-    };
+    }
 
     render() {
         return <AddRecipeView {...this.state} handleSubmit={this.handleSubmit} />;
