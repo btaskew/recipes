@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Routes renders correctly 1`] = `
+Array [
+  <div
+    className="heading modal-header"
+  >
+    <h4
+      className="modal-title"
+    >
+      No route found!
+      <span
+        className="float-right glyphicon glyphicon-home"
+        href="/"
+        onClick={[Function]}
+        style={undefined}
+      />
+    </h4>
+  </div>,
+  <div
+    className="modal-body"
+  >
+    <div
+      className="alert alert-danger"
+      role="alert"
+    >
+      404 - No route found!
+    </div>
+  </div>,
+]
+`;

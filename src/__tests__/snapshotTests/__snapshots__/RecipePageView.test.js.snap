@@ -68,7 +68,7 @@ Array [
     <h4
       className="modal-title"
     >
-      Error
+      Test recipe
       <span
         className="float-right active glyphicon glyphicon-home"
         href="/"
@@ -81,10 +81,40 @@ Array [
     className="modal-body"
   >
     <div
-      className="alert alert-info"
-      role="alert"
+      className="flex"
     >
-      Loading...
+      <input
+        className="form-control"
+        id={undefined}
+        onChange={[Function]}
+        placeholder="Enter ingredient name"
+        type="text"
+        value=""
+      />
+      <button
+        className="btn btn-primary"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+      >
+        Add
+      </button>
+    </div>
+    <hr />
+    <p>
+      Ingredients:
+    </p>
+    <div
+      className="flex flex-wrap margin-bottom"
+    >
+      <span
+        className="label label-primary"
+        href="/ingredient/Test"
+        onClick={[Function]}
+        style={undefined}
+      >
+        Test
+      </span>
     </div>
   </div>,
 ]

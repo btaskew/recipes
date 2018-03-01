@@ -24,7 +24,7 @@ function Page(props) {
 }
 
 Page.propTypes = {
-    children: PropTypes.node.isRequired,
+    children: PropTypes.node,
     loading: PropTypes.bool,
     heading: PropTypes.string,
     hideIcon: PropTypes.bool

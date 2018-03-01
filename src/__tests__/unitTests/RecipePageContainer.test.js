@@ -133,6 +133,18 @@ describe('RecipePageContainer', () => {
         });
     });
 
+    describe('shouldComponentUpdate', () => {
+        it('should return false when props are different', () => {
+            mockRecipeSearch({name: 'Test Recipe', ingredients: ['Test 1']});
+
+            const wrapper = shallow(<RecipePageContainer match={idProp} />);
+
+            const result = wrapper.instance().shouldComponentUpdate({params: {id: 2}});
+
+            expect(result).toBeFalsy();
+        });
+    });
+
 });
 
 function mockRecipeSearch(value) {
