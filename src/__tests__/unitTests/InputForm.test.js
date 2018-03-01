@@ -1,5 +1,5 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import {shallow, mount} from 'enzyme';
 import enzymeConfig from 'enzyme.config';
 
 import InputForm from 'components/InputForm';
@@ -7,8 +7,34 @@ import {Alert} from 'react-bootstrap';
 
 describe('InputForm', () => {
 
-    describe('handleSubmit', () => {
+    it('should display the value stored in state', () => {
+        const wrapper = mount(<InputForm submitForm={() => {}} />);
+        wrapper.setState({value: 'Test input'});
 
+        expect(wrapper.find('input').props().value).toBe('Test input');
+    });
+
+    it('should display an alert when noValue is true', () => {
+        const wrapper = shallow(<InputForm submitForm={() => {}} />);
+        wrapper.setState({noValue: true});
+
+        expect(wrapper.find(Alert)).toHaveLength(1);
+    });
+
+    describe('handleChange', () => {
+        it('should update the value in state', () => {
+            const wrapper = shallow(<InputForm submitForm={() => {}} />);
+            const value = {
+                target: {value: 'Test'}
+            };
+
+            wrapper.instance().handleChange(value);
+
+            expect(wrapper.state('value')).toBe('Test');
+        });
+    });
+
+    describe('handleSubmit', () => {
         it('should set noValue when submitted with no input', () => {
             const wrapper = shallow(<InputForm submitForm={() => {}} />);
 
@@ -41,14 +67,6 @@ describe('InputForm', () => {
 
             expect(spy).toHaveBeenCalled();
         });
-
-    });
-
-    it('should display an alert when noValue is true', () => {
-        const wrapper = shallow(<InputForm submitForm={() => {}} />);
-        wrapper.setState({noValue: true});
-
-        expect(wrapper.find(Alert)).toHaveLength(1);
     });
 
 });
