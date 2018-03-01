@@ -86,9 +86,12 @@ Array [
     >
       No recipes found for that ingredient
     </div>
-    <ul
-      className="list-group"
-    />
+    <div
+      className="alert alert-info"
+      role="alert"
+    >
+      No recipes provided
+    </div>
   </div>,
 ]
 `;
@@ -113,9 +116,26 @@ Array [
   <div
     className="modal-body"
   >
-    <ul
+    <div
       className="list-group"
-    />
+    >
+      <a
+        className="list-group-item"
+        href="/recipe/1"
+        onClick={[Function]}
+        style={undefined}
+      >
+        Recipe 1
+      </a>
+      <a
+        className="list-group-item"
+        href="/recipe/2"
+        onClick={[Function]}
+        style={undefined}
+      >
+        Recipe 2
+      </a>
+    </div>
   </div>,
 ]
 `;

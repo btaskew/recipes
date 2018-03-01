@@ -47,12 +47,23 @@ describe('Ingredient page view', () => {
     });
 
     it('renders with recipes correctly', () => {
+        const testRecipes = [
+            {
+                $loki: 1,
+                name: 'Recipe 1'
+            },
+            {
+                $loki: 2,
+                name: 'Recipe 2'
+            }
+        ];
+
         const ingredientPage = renderer
             .create(
                 <MemoryRouter>
                     <IngredientPageView
                         loading={false}
-                        recipes={[]}
+                        recipes={testRecipes}
                         ingredient="Test"
                         getRecipes={() => {}}
                     />
