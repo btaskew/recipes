@@ -1,10 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import {ListGroup} from 'react-bootstrap';
+import {Alert, ListGroup} from 'react-bootstrap';
 import OptionLink from 'components/OptionLink';
 
 function RecipesList(props) {
+    if(!props.recipes.length || props.recipes.length === 0) {
+        return <Alert bsStyle="info">No recipes provided</Alert>;
+    }
+
     return (
         <ListGroup className={props.styleName}>
             {props.recipes.map(recipe => (
@@ -25,7 +29,5 @@ RecipesList.propTypes = {
 RecipesList.defaultProps = {
     styleName: ''
 };
-
-//Should account for when no recipes are given
 
 export default RecipesList;
