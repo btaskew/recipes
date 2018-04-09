@@ -25,8 +25,8 @@ describe('RecipePageContainer', () => {
                 expect(spy).toHaveBeenCalledWith(1);
             });
 
-            it('should set correct state when search returns valid results', () => {
-                const wrapper = shallow(<RecipePageContainer match={idProp} />);
+            it('should set correct state when search returns valid results', async() => {
+                const wrapper = await shallow(<RecipePageContainer match={idProp} />);
 
                 expect(wrapper.state()).toEqual({
                     heading: 'Test',
@@ -43,10 +43,10 @@ describe('RecipePageContainer', () => {
         });
 
         describe('Unsuccessfull result', () => {
-            it('should set correct state when search returns nothing', () => {
+            it('should set correct state when search returns nothing', async () => {
                 mockRecipeSearch(null);
 
-                const wrapper = shallow(<RecipePageContainer match={idProp} />);
+                const wrapper = await shallow(<RecipePageContainer match={idProp} />);
 
                 expect(wrapper.state()).toEqual({
                     heading: 'Oops!',
@@ -69,12 +69,12 @@ describe('RecipePageContainer', () => {
         });
 
         describe('Successfull result', () => {
-            it('should set correct state when add ingredient successfull', () => {
+            it('should set correct state when add ingredient successfull', async() => {
                 mockAddIngredient('Test 2');
 
                 const wrapper = shallow(<RecipePageContainer match={idProp} />);
 
-                wrapper.instance().addIngredient('Test 2');
+                await wrapper.instance().addIngredient('Test 2');
 
                 expect(wrapper.state()).toEqual({
                     heading: 'Test Recipe',
@@ -89,12 +89,12 @@ describe('RecipePageContainer', () => {
         });
 
         describe('Adding existing ingredient', () => {
-            it('should set correct state when adding already existing ingredient', () => {
+            it('should set correct state when adding already existing ingredient', async() => {
                 mockAddIngredient('Ingredient present');
 
                 const wrapper = shallow(<RecipePageContainer match={idProp} />);
 
-                wrapper.instance().addIngredient('Test 1');
+                await wrapper.instance().addIngredient('Test 1');
 
                 expect(wrapper.state()).toEqual({
                     heading: 'Test Recipe',
@@ -109,12 +109,12 @@ describe('RecipePageContainer', () => {
         });
 
         describe('Unsuccessfull result', () => {
-            it('should set correct state when adding already existing ingredient', () => {
+            it('should set correct state when adding already existing ingredient', async() => {
                 mockAddIngredient(null);
 
                 const wrapper = shallow(<RecipePageContainer match={idProp} />);
 
-                wrapper.instance().addIngredient('Test 1');
+                await wrapper.instance().addIngredient('Test 1');
 
                 expect(wrapper.state()).toEqual({
                     heading: 'Test Recipe',

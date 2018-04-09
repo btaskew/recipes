@@ -2,44 +2,44 @@ import Database from 'scripts/Database';
 import Ingredient from 'scripts/Ingredient';
 
 class Recipe extends Database {
-    findById(id) {
-        const recipe = this.recipes.find({$loki: id})[0];
+    async findById(id) {
+        const recipe = await this.recipes.find({$loki: id})[0];
 
         if (!recipe) {
             return null;
         }
 
-        recipe.ingredients = this.relatedIngredients(recipe.$loki);
+        recipe.ingredients = await this.relatedIngredients(recipe.$loki);
         return recipe;
     }
 
-    findByName(name) {
-        const recipe = this.recipes.find({name})[0];
+    async findByName(name) {
+        const recipe = await this.recipes.find({name})[0];
 
         if (!recipe) {
             return null;
         }
 
-        recipe.ingredients = this.relatedIngredients(recipe.$loki);
+        recipe.ingredients = await this.relatedIngredients(recipe.$loki);
         return recipe;
     }
 
-    findByIngredient(ingredient) {
-        const ingredients = Ingredient.findByName(ingredient);
+    async findByIngredient(ingredient) {
+        const ingredients = await Ingredient.findByName(ingredient);
 
         if (!ingredients || ingredients.length < 1) {
             return [];
         }
 
-        return Ingredient.relatedRecipes(ingredients);
+        return await Ingredient.relatedRecipes(ingredients);
     }
 
-    relatedIngredients(id) {
-        return Ingredient.findByRecipeId(id);
+    async relatedIngredients(id) {
+        return await Ingredient.findByRecipeId(id);
     }
 
-    hasIngredient(ingredientName, recipeId) {
-        const matchedIngredient = Ingredient.fromRecipe(ingredientName, recipeId);
+    async hasIngredient(ingredientName, recipeId) {
+        const matchedIngredient = await Ingredient.fromRecipe(ingredientName, recipeId);
 
         if (!matchedIngredient.length) {
             return false;
@@ -48,12 +48,12 @@ class Recipe extends Database {
         return true;
     }
 
-    addRecipe(recipe) {
-        this.recipes.insert({
+    async addRecipe(recipe) {
+        await this.recipes.insert({
             name: recipe
         });
         
-        return this.findByName(recipe);
+        return await this.findByName(recipe);
     }
 }
 

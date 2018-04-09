@@ -25,8 +25,8 @@ describe('RecipeSearch', () => {
             expect(spy).toHaveBeenCalledWith('Test');
         });
 
-        it('should set correct state when search returns valid results', () => {
-            wrapper.instance().recipeSearch('Test');
+        it('should set correct state when search returns valid results', async() => {
+            await wrapper.instance().recipeSearch('Test');
 
             expect(wrapper.state()).toEqual({
                 loading: false,
@@ -41,11 +41,11 @@ describe('RecipeSearch', () => {
     });
 
     describe('recipeSearch - unsuccessfull result', () => {
-        it('should set correct state when search returns nothing', () => {
+        it('should set correct state when search returns nothing', async() => {
             Recipe.findByIngredient = jest.spyOn(Recipe, 'findByIngredient').mockReturnValue(null);
             const wrapper = shallow(<RecipeSearch render={() => {}} />);
 
-            wrapper.instance().recipeSearch('Test');
+            await wrapper.instance().recipeSearch('Test');
 
             expect(wrapper.state()).toEqual({
                 loading: false,

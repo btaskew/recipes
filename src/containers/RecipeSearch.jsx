@@ -15,9 +15,9 @@ class RecipeSearch extends Component {
         this.recipeSearch = this.recipeSearch.bind(this);
     }
 
-    recipeSearch(ingredient) {
+    async recipeSearch(ingredient) {
         this.setState({loading: true});
-        const recipes = Recipe.findByIngredient(ingredient);
+        const recipes = await Recipe.findByIngredient(ingredient);
 
         if (!recipes || recipes.length < 1) {
             this.setState({recipes: null, noResult: true, loading: false});

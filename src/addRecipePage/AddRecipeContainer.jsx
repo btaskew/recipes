@@ -17,10 +17,10 @@ class AddRecipe extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleSubmit(name) {
+    async handleSubmit(name) {
         this.setState({loading: true});
 
-        const recipe = Recipe.addRecipe(name);
+        const recipe = await Recipe.addRecipe(name);
 
         if (!recipe || recipe.length < 1) {
             this.setState({

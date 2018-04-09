@@ -24,7 +24,7 @@ Array [
       className="alert alert-info"
       role="alert"
     >
-      No recipes found for that ingredient
+      Loading...
     </div>
   </div>,
 ]

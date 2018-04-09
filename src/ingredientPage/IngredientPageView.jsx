@@ -6,8 +6,8 @@ import Page from 'components/Page';
 import RecipesList from 'components/RecipesList';
 
 class IngredientPageView extends PureComponent {
-    componentDidMount() {
-        this.props.getRecipes(this.props.ingredient);
+    async componentDidMount() {
+        await this.props.getRecipes(this.props.ingredient);
     }
 
     render() {

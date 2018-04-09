@@ -25,8 +25,8 @@ describe('AddRecipeContainer', () => {
             expect(spy).toHaveBeenCalledWith('Test');
         });
 
-        it('should set correct state when recipe saved successfully', () => {
-            wrapper.instance().handleSubmit('Test');
+        it('should set correct state when recipe saved successfully', async() => {
+            await wrapper.instance().handleSubmit('Test');
 
             expect(wrapper.state()).toEqual({
                 error: false,
@@ -43,12 +43,12 @@ describe('AddRecipeContainer', () => {
     });
 
     describe('handleSubmit - unsuccessfull result', () => {
-        it('should set correct state when recipe not saved', () => {
+        it('should set correct state when recipe not saved', async () => {
             Recipe.addRecipe = jest.spyOn(Recipe, 'addRecipe').mockReturnValue(null);
 
             const wrapper = shallow(<AddRecipeContainer />);
 
-            wrapper.instance().handleSubmit('Test');
+            await wrapper.instance().handleSubmit('Test');
 
             expect(wrapper.state()).toEqual({
                 error: true,

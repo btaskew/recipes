@@ -19,9 +19,9 @@ class RecipePageContainer extends Component {
         this.addIngredient = this.addIngredient.bind(this);
     }
 
-    componentDidMount() {
+    async componentDidMount() {
         const recipeId = parseInt(this.props.match.params.id, 10);
-        const recipe = Recipe.findById(recipeId);
+        const recipe = await Recipe.findById(recipeId);
 
         if (!recipe || recipe.length < 1) {
             this.setState({
@@ -36,10 +36,10 @@ class RecipePageContainer extends Component {
         this.setState({heading: recipe.name, ingredients: recipe.ingredients, loading: false});
     }
 
-    addIngredient(ingredient) {
+    async addIngredient(ingredient) {
         this.setState({loading: true});
         const recipeId = parseInt(this.props.match.params.id, 10);
-        const recipeIngredient = Ingredient.addIngredient(ingredient, recipeId);
+        const recipeIngredient = await Ingredient.addIngredient(ingredient, recipeId);
 
         if (!recipeIngredient) {
             this.setState({
