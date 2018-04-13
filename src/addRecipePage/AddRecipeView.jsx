@@ -15,23 +15,23 @@ function AddRecipeView(props) {
                 inputText="Enter recipe name"
             />
 
-            {props.error && <Alert bsStyle="danger">{props.errorMessage}</Alert>}
-
-            {props.success && <Redirect to={props.redirectPath} />}
+            {!props.loading &&
+                (!props.success ? (
+                    <Alert bsStyle="danger">Error saving recipe. Please try again later</Alert>
+                ) : (
+                    <Redirect to={props.redirectPath} />
+                ))}
         </Page>
     );
 }
 
 AddRecipeView.propTypes = {
-    error: PropTypes.bool.isRequired,
     handleSubmit: PropTypes.func.isRequired,
     loading: PropTypes.bool.isRequired,
     success: PropTypes.bool.isRequired,
-    errorMessage: PropTypes.string,
     redirectPath: PropTypes.string
 };
 AddRecipeView.defaultProps = {
-    errorMessage: 'Error adding recipe',
     redirectPath: '/'
 };
 

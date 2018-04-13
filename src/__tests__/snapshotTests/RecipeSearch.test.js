@@ -34,7 +34,7 @@ describe('Recipe search view', () => {
         const searchPage = renderer
             .create(
                 <MemoryRouter>
-                    <RecipeSearchView loading={true} noResult={true} handleSubmit={() => {}} />
+                    <RecipeSearchView loading={true} recipes={null} handleSubmit={() => {}} />
                 </MemoryRouter>
             )
             .toJSON();
@@ -42,10 +42,21 @@ describe('Recipe search view', () => {
     });
 
     it('renders with results correctly', () => {
+        const testRecipes = [
+            {
+                $loki: 1,
+                name: 'Recipe 1'
+            },
+            {
+                $loki: 2,
+                name: 'Recipe 2'
+            }
+        ];
+
         const searchPage = renderer
             .create(
                 <MemoryRouter>
-                    <RecipeSearchView loading={true} recipes={[]} handleSubmit={() => {}} />
+                    <RecipeSearchView loading={false} recipes={testRecipes} handleSubmit={() => {}} />
                 </MemoryRouter>
             )
             .toJSON();

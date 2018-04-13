@@ -29,8 +29,6 @@ describe('AddRecipeContainer', () => {
             await wrapper.instance().handleSubmit('Test');
 
             expect(wrapper.state()).toEqual({
-                error: false,
-                errorMessage: null,
                 loading: false,
                 success: true,
                 redirectPath: '/recipe/1'
@@ -51,8 +49,6 @@ describe('AddRecipeContainer', () => {
             await wrapper.instance().handleSubmit('Test');
 
             expect(wrapper.state()).toEqual({
-                error: true,
-                errorMessage: 'Error saving recipe. Please try again later',
                 loading: false,
                 success: false,
                 redirectPath: null

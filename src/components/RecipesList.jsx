@@ -5,8 +5,12 @@ import {Alert, ListGroup} from 'react-bootstrap';
 import OptionLink from 'components/OptionLink';
 
 function RecipesList(props) {
-    if(!props.recipes.length || props.recipes.length === 0) {
-        return <Alert bsStyle="info">No recipes provided</Alert>;
+    if (!props.recipes || props.recipes.length === 0) {
+        return (
+            <Alert bsStyle="info" className="margin-top">
+                No recipes found for that ingredient
+            </Alert>
+        );
     }
 
     return (
@@ -23,7 +27,7 @@ function RecipesList(props) {
 }
 
 RecipesList.propTypes = {
-    recipes: PropTypes.array.isRequired,
+    recipes: PropTypes.array,
     styleName: PropTypes.string
 };
 RecipesList.defaultProps = {

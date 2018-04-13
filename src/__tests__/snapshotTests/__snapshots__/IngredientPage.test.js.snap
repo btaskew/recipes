@@ -81,16 +81,10 @@ Array [
     className="modal-body"
   >
     <div
-      className="alert alert-info"
+      className="margin-top alert alert-info"
       role="alert"
     >
       No recipes found for that ingredient
-    </div>
-    <div
-      className="alert alert-info"
-      role="alert"
-    >
-      No recipes provided
     </div>
   </div>,
 ]

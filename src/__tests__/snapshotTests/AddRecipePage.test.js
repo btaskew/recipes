@@ -11,7 +11,6 @@ describe('Add recipe page', () => {
                 <MemoryRouter>
                     <AddRecipeView
                         loading={true}
-                        error={false}
                         success={false}
                         handleSubmit={() => {}}
                     />
@@ -27,24 +26,6 @@ describe('Add recipe page', () => {
                 <MemoryRouter>
                     <AddRecipeView
                         loading={false}
-                        error={true}
-                        errorMessage={"Error"}
-                        success={false}
-                        handleSubmit={() => {}}
-                    />
-                </MemoryRouter>
-            )
-            .toJSON();
-        expect(addRecipePage).toMatchSnapshot();
-    });
-
-    it('renders normally correctly', () => {
-        const addRecipePage = renderer
-            .create(
-                <MemoryRouter>
-                    <AddRecipeView
-                        loading={false}
-                        error={false}
                         success={false}
                         handleSubmit={() => {}}
                     />

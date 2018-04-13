@@ -7,8 +7,6 @@ class AddRecipe extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            error: false,
-            errorMessage: null,
             loading: false,
             success: false,
             redirectPath: null
@@ -24,8 +22,7 @@ class AddRecipe extends Component {
 
         if (!recipe || recipe.length < 1) {
             this.setState({
-                error: true,
-                errorMessage: 'Error saving recipe. Please try again later',
+                success: false,
                 loading: false
             });
             return;

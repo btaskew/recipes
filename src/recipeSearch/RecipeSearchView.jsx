@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import {Alert} from 'react-bootstrap';
 import Page from 'components/Page';
 import InputForm from 'components/InputForm';
 import RecipesList from 'components/RecipesList';
@@ -15,13 +14,7 @@ function RecipeSearchView(props) {
                 inputText="Enter ingredient"
             />
 
-            {props.noResult && (
-                <Alert bsStyle="info" className="margin-top">
-                    No recipes found for that ingredient
-                </Alert>
-            )}
-
-            {props.recipes && <RecipesList styleName="margin-top" recipes={props.recipes} />}
+            {!props.loading && <RecipesList styleName="margin-top" recipes={props.recipes} />}
         </Page>
     );
 }
@@ -29,7 +22,6 @@ function RecipeSearchView(props) {
 RecipeSearchView.propTypes = {
     handleSubmit: PropTypes.func.isRequired,
     loading: PropTypes.bool.isRequired,
-    noResult: PropTypes.bool,
     recipes: PropTypes.array
 };
 RecipeSearchView.defaultProps = {

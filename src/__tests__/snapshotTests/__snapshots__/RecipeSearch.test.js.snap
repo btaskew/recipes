@@ -40,6 +40,12 @@ Array [
         Search
       </button>
     </div>
+    <div
+      className="margin-top alert alert-info"
+      role="alert"
+    >
+      No recipes found for that ingredient
+    </div>
   </div>,
 ]
 `;
@@ -125,10 +131,44 @@ Array [
     className="modal-body"
   >
     <div
-      className="alert alert-info"
-      role="alert"
+      className="flex"
     >
-      Loading...
+      <input
+        className="form-control"
+        id={undefined}
+        onChange={[Function]}
+        placeholder="Enter ingredient"
+        type="text"
+        value=""
+      />
+      <button
+        className="btn btn-primary"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+      >
+        Search
+      </button>
+    </div>
+    <div
+      className="margin-top list-group"
+    >
+      <a
+        className="list-group-item"
+        href="/recipe/1"
+        onClick={[Function]}
+        style={undefined}
+      >
+        Recipe 1
+      </a>
+      <a
+        className="list-group-item"
+        href="/recipe/2"
+        onClick={[Function]}
+        style={undefined}
+      >
+        Recipe 2
+      </a>
     </div>
   </div>,
 ]

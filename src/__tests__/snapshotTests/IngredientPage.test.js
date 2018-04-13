@@ -36,7 +36,7 @@ describe('Ingredient page view', () => {
                 <MemoryRouter>
                     <IngredientPageView
                         loading={false}
-                        noResult={true}
+                        recipes={null}
                         ingredient="Test"
                         getRecipes={() => {}}
                     />
