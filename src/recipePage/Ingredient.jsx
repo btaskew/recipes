@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import {Label} from 'react-bootstrap';
+import Label from 'react-bootstrap/lib/Label';
 import {LinkContainer} from 'react-router-bootstrap';
 
 function Ingredient(props) {

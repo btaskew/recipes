@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import {ListGroupItem} from 'react-bootstrap';
+import ListGroupItem from 'react-bootstrap/lib/ListGroupItem';
 import {LinkContainer} from 'react-router-bootstrap';
 
 function OptionLink(props) {

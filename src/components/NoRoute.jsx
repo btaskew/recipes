@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Alert} from 'react-bootstrap';
+import Alert from 'react-bootstrap/lib/Alert';
 import Page from 'components/Page';
 
 function Heading() {

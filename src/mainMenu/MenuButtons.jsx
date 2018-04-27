@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {ListGroup} from 'react-bootstrap';
+import ListGroup from 'react-bootstrap/lib/ListGroup';
 import OptionLink from 'components/OptionLink';
 
 function MenuButtons() {

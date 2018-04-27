@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import {Modal} from 'react-bootstrap';
+import Modal from 'react-bootstrap/lib/Modal';
 import Heading from 'components/Heading';
 
 function PageContents(props) {

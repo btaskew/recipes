@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {LinkContainer} from 'react-router-bootstrap';
-import {Glyphicon} from 'react-bootstrap';
+import Glyphicon from 'react-bootstrap/lib/Glyphicon';
 
 function HomeIcon () {
     return (

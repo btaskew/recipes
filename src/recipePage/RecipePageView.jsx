@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import {Alert} from 'react-bootstrap';
+import Alert from 'react-bootstrap/lib/Alert';
 import Page from 'components/Page';
 import InputForm from 'components/InputForm';
 import IngredientsList from 'recipePage/IngredientsList';

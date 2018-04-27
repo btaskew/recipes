@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import {Alert, ListGroup} from 'react-bootstrap';
+import Alert from 'react-bootstrap/lib/Alert';
+import ListGroup from 'react-bootstrap/lib/ListGroup';
 import OptionLink from 'components/OptionLink';
 
 function RecipesList(props) {

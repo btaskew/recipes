@@ -1,8 +1,9 @@
 import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 
-import {Alert} from 'react-bootstrap';
-import {Button, FormControl} from 'react-bootstrap';
+import Alert from 'react-bootstrap/lib/Alert';
+import Button from 'react-bootstrap/lib/Button';
+import FormControl from 'react-bootstrap/lib/FormControl';
 
 class InputForm extends PureComponent {
     constructor(props) {
