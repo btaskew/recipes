@@ -13,6 +13,7 @@ describe('AddRecipeView', () => {
                 error={false}
                 success={true}
                 redirectPath="#"
+                result={true}
                 handleSubmit={() => {}}
             />
         );

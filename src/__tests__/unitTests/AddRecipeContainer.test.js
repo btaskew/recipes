@@ -31,6 +31,7 @@ describe('AddRecipeContainer', () => {
             expect(wrapper.state()).toEqual({
                 loading: false,
                 success: true,
+                result: true,
                 redirectPath: '/recipe/1'
             });
         });
@@ -51,6 +52,7 @@ describe('AddRecipeContainer', () => {
             expect(wrapper.state()).toEqual({
                 loading: false,
                 success: false,
+                result: true,
                 redirectPath: null
             });
         });

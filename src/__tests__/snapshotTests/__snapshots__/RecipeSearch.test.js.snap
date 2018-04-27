@@ -40,12 +40,6 @@ Array [
         Search
       </button>
     </div>
-    <div
-      className="margin-top alert alert-info"
-      role="alert"
-    >
-      No recipes found for that ingredient
-    </div>
   </div>,
 ]
 `;

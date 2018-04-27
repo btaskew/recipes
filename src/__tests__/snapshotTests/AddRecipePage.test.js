@@ -12,6 +12,7 @@ describe('Add recipe page', () => {
                     <AddRecipeView
                         loading={true}
                         success={false}
+                        result={false}
                         handleSubmit={() => {}}
                     />
                 </MemoryRouter>
@@ -27,6 +28,7 @@ describe('Add recipe page', () => {
                     <AddRecipeView
                         loading={false}
                         success={false}
+                        result={true}
                         handleSubmit={() => {}}
                     />
                 </MemoryRouter>

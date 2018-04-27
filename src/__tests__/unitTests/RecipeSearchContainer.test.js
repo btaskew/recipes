@@ -30,6 +30,7 @@ describe('RecipeSearch', () => {
 
             expect(wrapper.state()).toEqual({
                 loading: false,
+                result: true,
                 recipes: [{$loki: 1, name: 'Test'}]
             });
         });
@@ -48,6 +49,7 @@ describe('RecipeSearch', () => {
 
             expect(wrapper.state()).toEqual({
                 loading: false,
+                result: true,
                 recipes: null
             });
 
