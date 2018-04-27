@@ -8,7 +8,8 @@ class RecipeSearch extends Component {
         super(props);
         this.state = {
             loading: false,
-            recipes: null
+            recipes: null,
+            result: false
         };
 
         this.recipeSearch = this.recipeSearch.bind(this);
@@ -19,7 +20,7 @@ class RecipeSearch extends Component {
 
         const recipes = await Recipe.findByIngredient(ingredient);
 
-        this.setState({recipes: recipes, loading: false});
+        this.setState({recipes: recipes, loading: false, result: true});
     }
 
     render() {

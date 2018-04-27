@@ -35,12 +35,10 @@ class Ingredient extends Database {
             return 'Ingredient present';
         }
 
-        await this.ingredients.insert({
+        return await this.ingredients.insert({
             name: ingredient,
             recipeId: recipeId
         });
-        
-        return await this.fromRecipe(ingredient, recipeId)[0];
     }
 }
 

@@ -9,7 +9,8 @@ class AddRecipe extends Component {
         this.state = {
             loading: false,
             success: false,
-            redirectPath: null
+            redirectPath: null,
+            result: false
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -23,6 +24,7 @@ class AddRecipe extends Component {
         if (!recipe || recipe.length < 1) {
             this.setState({
                 success: false,
+                result: true,
                 loading: false
             });
             return;
@@ -31,6 +33,7 @@ class AddRecipe extends Component {
         this.setState({
             redirectPath: `/recipe/${recipe.$loki}`,
             success: true,
+            result: true,
             loading: false
         });
     }

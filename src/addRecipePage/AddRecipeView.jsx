@@ -15,7 +15,7 @@ function AddRecipeView(props) {
                 inputText="Enter recipe name"
             />
 
-            {!props.loading &&
+            {props.result &&
                 (!props.success ? (
                     <Alert bsStyle="danger">Error saving recipe. Please try again later</Alert>
                 ) : (
@@ -29,6 +29,7 @@ AddRecipeView.propTypes = {
     handleSubmit: PropTypes.func.isRequired,
     loading: PropTypes.bool.isRequired,
     success: PropTypes.bool.isRequired,
+    result: PropTypes.bool.isRequired,
     redirectPath: PropTypes.string
 };
 AddRecipeView.defaultProps = {

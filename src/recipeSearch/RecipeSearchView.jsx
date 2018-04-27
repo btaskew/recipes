@@ -14,7 +14,7 @@ function RecipeSearchView(props) {
                 inputText="Enter ingredient"
             />
 
-            {!props.loading && <RecipesList styleName="margin-top" recipes={props.recipes} />}
+            {props.result && <RecipesList styleName="margin-top" recipes={props.recipes} />}
         </Page>
     );
 }
@@ -22,6 +22,7 @@ function RecipeSearchView(props) {
 RecipeSearchView.propTypes = {
     handleSubmit: PropTypes.func.isRequired,
     loading: PropTypes.bool.isRequired,
+    result: PropTypes.bool.isRequired,
     recipes: PropTypes.array
 };
 RecipeSearchView.defaultProps = {
