@@ -8,23 +8,31 @@ Array [
     <h4
       className="modal-title"
     >
-      No route found!
-      <span
-        className="float-right glyphicon glyphicon-home"
-        href="/"
-        onClick={[Function]}
-        style={undefined}
-      />
+      Main menu
     </h4>
   </div>,
   <div
     className="modal-body"
   >
     <div
-      className="alert alert-danger"
-      role="alert"
+      className="list-group"
     >
-      404 - No route found!
+      <a
+        className="list-group-item"
+        href="/search"
+        onClick={[Function]}
+        style={undefined}
+      >
+        Search by ingredient
+      </a>
+      <a
+        className="list-group-item"
+        href="/add"
+        onClick={[Function]}
+        style={undefined}
+      >
+        Add recipe
+      </a>
     </div>
   </div>,
 ]
