@@ -44,11 +44,11 @@ describe('Recipe search view', () => {
     it('renders with results correctly', () => {
         const testRecipes = [
             {
-                $loki: 1,
+                id: 1,
                 name: 'Recipe 1'
             },
             {
-                $loki: 2,
+                id: 2,
                 name: 'Recipe 2'
             }
         ];

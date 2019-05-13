@@ -39,7 +39,7 @@ describe('Recipe page', () => {
                     <RecipePageView
                         loading={false}
                         heading="Test recipe"
-                        ingredients={[{$loki: 1, name:'Test'}]}
+                        ingredients={[{id: 1, name:'Test'}]}
                         addIngredient={() => {}}
                     />
                 </MemoryRouter>

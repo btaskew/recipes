@@ -49,11 +49,11 @@ describe('Ingredient page view', () => {
     it('renders with recipes correctly', () => {
         const testRecipes = [
             {
-                $loki: 1,
+                id: 1,
                 name: 'Recipe 1'
             },
             {
-                $loki: 2,
+                id: 2,
                 name: 'Recipe 2'
             }
         ];

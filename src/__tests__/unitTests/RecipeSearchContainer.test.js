@@ -1,28 +1,28 @@
 import React from 'react';
-import {shallow, mount} from 'enzyme';
+import {shallow} from 'enzyme';
 import enzymeConfig from 'enzyme.config';
 
 import RecipeSearch from 'containers/RecipeSearch';
-import Recipe from 'scripts/Recipe';
+import Connection from '../../scripts/Connection';
 
 describe('RecipeSearch', () => {
     describe('recipeSearch - successfull result', () => {
         let wrapper = null;
 
         beforeAll(() => {
-            Recipe.findByIngredient = jest
-                .spyOn(Recipe, 'findByIngredient')
-                .mockReturnValue([{$loki: 1, name: 'Test'}]);
+            Connection.get = jest
+                .spyOn(Connection, 'get')
+                .mockReturnValue([{id: 1, name: 'Test'}]);
 
             wrapper = shallow(<RecipeSearch render={() => {}} />);
         });
 
-        it('should call Recipe.findByIngredient with ingredient value', () => {
-            const spy = jest.spyOn(Recipe, 'findByIngredient');
+        it('should call Connection.get with ingredient value', () => {
+            const spy = jest.spyOn(Connection, 'get');
 
             wrapper.instance().recipeSearch('Test');
 
-            expect(spy).toHaveBeenCalledWith('Test');
+            expect(spy).toHaveBeenCalledWith('ingredients/recipes?ingredient=Test');
         });
 
         it('should set correct state when search returns valid results', async() => {
@@ -31,18 +31,18 @@ describe('RecipeSearch', () => {
             expect(wrapper.state()).toEqual({
                 loading: false,
                 result: true,
-                recipes: [{$loki: 1, name: 'Test'}]
+                recipes: [{id: 1, name: 'Test'}]
             });
         });
 
         afterAll(() => {
-            Recipe.findByIngredient.mockRestore();
+            Connection.get.mockRestore();
         });
     });
 
     describe('recipeSearch - unsuccessfull result', () => {
         it('should set correct state when search returns nothing', async() => {
-            Recipe.findByIngredient = jest.spyOn(Recipe, 'findByIngredient').mockReturnValue(null);
+            Connection.get = jest.spyOn(Connection, 'get').mockReturnValue(null);
             const wrapper = shallow(<RecipeSearch render={() => {}} />);
 
             await wrapper.instance().recipeSearch('Test');
@@ -53,7 +53,7 @@ describe('RecipeSearch', () => {
                 recipes: null
             });
 
-            Recipe.findByIngredient.mockRestore();
+            Connection.get.mockRestore();
         });
     });
 });

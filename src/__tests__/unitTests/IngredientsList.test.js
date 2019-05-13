@@ -1,5 +1,5 @@
 import React from 'react';
-import {shallow, mount} from 'enzyme';
+import {shallow} from 'enzyme';
 import enzymeConfig from 'enzyme.config';
 
 import IngredientsList from 'recipePage/IngredientsList';
@@ -8,15 +8,15 @@ import {Alert} from 'react-bootstrap';
 
 const testIngredients = [
     {
-        $loki: 1,
+        id: 1,
         name: 'Ingredient 1'
     },
     {
-        $loki: 2,
+        id: 2,
         name: 'Ingredient 2'
     },
     {
-        $loki: 3,
+        id: 3,
         name: 'Ingredient 3'
     }
 ];

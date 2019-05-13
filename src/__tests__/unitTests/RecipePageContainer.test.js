@@ -1,10 +1,9 @@
 import React from 'react';
-import {shallow, mount} from 'enzyme';
+import {shallow} from 'enzyme';
 import enzymeConfig from 'enzyme.config';
 
 import RecipePageContainer from 'recipePage/RecipePageContainer';
-import Ingredient from 'scripts/Ingredient';
-import Recipe from 'scripts/Recipe';
+import Connection from 'scripts/Connection';
 
 const idProp = {params: {id: 1}};
 
@@ -17,12 +16,12 @@ describe('RecipePageContainer', () => {
                 mockRecipeSearch({name: 'Test', ingredients: []});
             });
 
-            it('should call Recipe.findById with id value', () => {
-                const spy = jest.spyOn(Recipe, 'findById');
+            it('should try to fetch the recipe', () => {
+                const spy = jest.spyOn(Connection, 'get');
 
-                const wrapper = shallow(<RecipePageContainer match={idProp} />);
+                shallow(<RecipePageContainer match={idProp} />);
 
-                expect(spy).toHaveBeenCalledWith(1);
+                expect(spy).toHaveBeenCalledWith('recipes/1');
             });
 
             it('should set correct state when search returns valid results', async() => {
@@ -38,7 +37,7 @@ describe('RecipePageContainer', () => {
             });
 
             afterAll(() => {
-                Recipe.findById.mockRestore();
+                Connection.get.mockRestore();
             });
         });
 
@@ -56,7 +55,7 @@ describe('RecipePageContainer', () => {
                     ingredients: null
                 });
 
-                Recipe.findById.mockRestore();
+                Connection.get.mockRestore();
             });
         });
 
@@ -84,7 +83,7 @@ describe('RecipePageContainer', () => {
                     ingredients: ['Test 1', 'Test 2']
                 });
 
-                Ingredient.addIngredient.mockRestore();
+                Connection.post.mockRestore();
             });
         });
 
@@ -104,7 +103,7 @@ describe('RecipePageContainer', () => {
                     ingredients: ['Test 1']
                 });
 
-                Ingredient.addIngredient.mockRestore();
+                Connection.post.mockRestore();
             });
         });
 
@@ -124,12 +123,12 @@ describe('RecipePageContainer', () => {
                     ingredients: ['Test 1']
                 });
 
-                Ingredient.addIngredient.mockRestore();
+                Connection.post.mockRestore();
             });
         });
 
         afterAll(() => {
-            Recipe.findById.mockRestore();
+            Connection.get.mockRestore();
         });
     });
 
@@ -148,9 +147,9 @@ describe('RecipePageContainer', () => {
 });
 
 function mockRecipeSearch(value) {
-    Recipe.findById = jest.spyOn(Recipe, 'findById').mockReturnValue(value);
+    Connection.get = jest.spyOn(Connection, 'get').mockReturnValue(value);
 }
 
 function mockAddIngredient(value) {
-    Ingredient.addIngredient = jest.spyOn(Ingredient, 'addIngredient').mockReturnValue(value);
+    Connection.post = jest.spyOn(Connection, 'post').mockReturnValue(value);
 }
