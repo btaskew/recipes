@@ -19,8 +19,8 @@ function IngredientsList(props) {
             <div className="flex flex-wrap margin-bottom">
                 {props.ingredients.map(ingredient => (
                     <Ingredient
-                        key={ingredient.$loki}
-                        id={ingredient.$loki}
+                        key={ingredient.id}
+                        id={ingredient.id}
                         name={ingredient.name}
                     />
                 ))}

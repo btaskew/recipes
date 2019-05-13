@@ -4,6 +4,7 @@ import Recipe from 'scripts/Recipe';
 import Ingredient from 'scripts/Ingredient';
 
 import RecipePageView from 'recipePage/RecipePageView';
+import Connection from '../scripts/Connection';
 
 class RecipePageContainer extends Component {
     constructor(props) {
@@ -21,7 +22,7 @@ class RecipePageContainer extends Component {
 
     async componentDidMount() {
         const recipeId = parseInt(this.props.match.params.id, 10);
-        const recipe = await Recipe.findById(recipeId);
+        const recipe = await Connection.get('recipes/' + recipeId);
 
         if (!recipe || recipe.length < 1) {
             this.setState({
