@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Recipe from 'scripts/Recipe';
 
 import AddRecipeView from 'addRecipePage/AddRecipeView';
+import Connection from '../scripts/Connection';
 
 class AddRecipe extends Component {
     constructor(props) {
@@ -19,7 +20,7 @@ class AddRecipe extends Component {
     async handleSubmit(name) {
         this.setState({loading: true});
 
-        const recipe = await Recipe.addRecipe(name);
+        const recipe = await Connection.post('recipes', {name: name});
 
         if (!recipe || recipe.length < 1) {
             this.setState({
@@ -31,7 +32,7 @@ class AddRecipe extends Component {
         }
 
         this.setState({
-            redirectPath: `/recipe/${recipe.$loki}`,
+            redirectPath: `/recipe/${recipe.id}`,
             success: true,
             result: true,
             loading: false

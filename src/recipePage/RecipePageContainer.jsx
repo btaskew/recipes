@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import Recipe from 'scripts/Recipe';
 import Ingredient from 'scripts/Ingredient';
 
 import RecipePageView from 'recipePage/RecipePageView';
@@ -40,7 +39,7 @@ class RecipePageContainer extends Component {
     async addIngredient(ingredient) {
         this.setState({loading: true});
         const recipeId = parseInt(this.props.match.params.id, 10);
-        const recipeIngredient = await Ingredient.addIngredient(ingredient, recipeId);
+        const recipeIngredient = await Connection.post('recipes/' + recipeId + '/ingredients', {name: ingredient});
 
         if (!recipeIngredient) {
             this.setState({

@@ -6,6 +6,10 @@ class Connection {
 
         await axios.get(process.env.REACT_APP_API_ENDPOINT + endpoint).then(result => {
             data = result.data;
+        }).catch(error => {
+            if (error.response.data) {
+                data = error.response.data.error;
+            }
         });
 
         return data;
@@ -16,6 +20,10 @@ class Connection {
 
         await axios.post(process.env.REACT_APP_API_ENDPOINT + endpoint, postData).then(result => {
             data = result.data;
+        }).catch(error => {
+            if (error.response.data) {
+                data = error.response.data.error;
+            }
         });
 
         return data;

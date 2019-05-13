@@ -1,7 +1,7 @@
 import {Component} from 'react';
 import PropTypes from 'prop-types';
 
-import Recipe from 'scripts/Recipe';
+import Connection from '../scripts/Connection';
 
 class RecipeSearch extends Component {
     constructor(props) {
@@ -18,7 +18,7 @@ class RecipeSearch extends Component {
     async recipeSearch(ingredient) {
         this.setState({loading: true});
 
-        const recipes = await Recipe.findByIngredient(ingredient);
+        const recipes = await Connection.get('ingredients/recipes?ingredient=' + ingredient);
 
         this.setState({recipes: recipes, loading: false, result: true});
     }
