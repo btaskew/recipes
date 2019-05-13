@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import Ingredient from 'scripts/Ingredient';
 
 import RecipePageView from 'recipePage/RecipePageView';
 import Connection from '../scripts/Connection';
