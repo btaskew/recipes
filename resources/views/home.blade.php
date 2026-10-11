@@ -14,6 +14,12 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
                 <div class="flex justify-between items-center">
                     <h1 class="text-2xl font-bold text-orange-600 dark:text-orange-500">Recipe Finder</h1>
+                    <a
+                        href="{{ route('recipes.create') }}"
+                        class="px-4 py-2 bg-orange-600 hover:bg-orange-700 text-white text-sm font-bold rounded-xl shadow-sm hover:shadow-md transition-all duration-200"
+                    >
+                        Add Recipe
+                    </a>
                 </div>
             </div>
         </header>

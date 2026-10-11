@@ -12,6 +12,12 @@ class Recipe extends Model
     /** @use HasFactory<RecipeFactory> */
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'method_type',
+        'method_value',
+    ];
+
     /**
      * @return BelongsToMany<Ingredient, $this>
      */

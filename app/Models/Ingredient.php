@@ -12,6 +12,8 @@ class Ingredient extends Model
     /** @use HasFactory<IngredientFactory> */
     use HasFactory;
 
+    protected $fillable = ['name'];
+
     /**
      * @return BelongsToMany<Recipe, $this>
      */
